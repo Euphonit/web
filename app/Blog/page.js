@@ -1,5 +1,5 @@
-import NavButton from "../comp/nav-button";
-import * as Text from "../comp/text";
+import NavButton from "../lib/nav-button";
+import * as Text from "../lib/text";
 import "./style.css";
 
 export default function BlogHome() {
