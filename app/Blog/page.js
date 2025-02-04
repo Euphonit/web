@@ -4,7 +4,7 @@ import "./style.css";
 
 export default function BlogHome() {
   <div>
-    <NavButton content="Home" local="./.." />
-    <Text.H1 content="Why I hate git" />
+    <NavButton content="Home" local="../" />
+    <h1>Fun</h1>
   </div>;
 }
