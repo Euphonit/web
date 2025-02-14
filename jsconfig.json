@@ -1,7 +1,9 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
-}
+   {
+     "compilerOptions": {
+       "baseUrl": ".", // Usually the project root
+       "paths": {
+         "@/*": ["app/*"],
+         "@/comp/*": ["src/comp/*"]
+       }
+     }
+   }
