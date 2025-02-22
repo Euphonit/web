@@ -9,9 +9,16 @@ export default function Home() {
       >
         <Link href="/pages/blog">Click Here to go to my blog</Link>
       </p>
-      <h1 className={`${font.poppins.variable} antialiased text-4xl`}>
-        Welcome to my website at euphonit.uk
+      <h1 className={`${font.poppins.variable} antialiased text-clip text-4xl`}>
+        Hello, im Daniel Crutti (euphonit) and this is my website!
+        <br /> Picture of Me:
       </h1>
+      <Image
+        src="/me.jpg"
+        width={500}
+        height={500}
+        alt="Me at chipoltle with friends. Taken using MacOS Photo Booth on 2015 MacBook Air"
+      />
     </div>
   );
 }
