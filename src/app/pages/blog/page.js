@@ -15,7 +15,14 @@ export default function () {
         Blog Zone
       </h1>
       <p
-        className={`${font.poppins.variable} antialiased text-2xl bg-green-700 rounded-md active:bg-blue-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
+        className={`${font.poppins.variable} antialiased text-2xl bg-purple-700 rounded-md active:bg-purple-800 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
+      >
+        <Link href="/pages/blog/blogs/git">
+          2# Why I hate Git, but still use it (Feb 27. 2025)
+        </Link>
+      </p>
+      <p
+        className={`${font.poppins.variable} antialiased text-2xl bg-green-700 rounded-md active:bg-green-800 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
       >
         <Link href="/pages/blog/blogs/journey">
           1# My dev journey thus far (Feb. 22 2025)

@@ -1,5 +1,5 @@
-import * as font from "../../../../components/font";
 import Link from "next/link";
+import * as font from "../../../../components/font";
 
 export default function () {
   return (
@@ -50,7 +50,7 @@ export default function () {
       </p>
       <h1 className="text-5xl text-white font-semibold text-center text-clip">
         <br />
-        Part 2: Why, and How I returned
+        Part 2: Why, and how I returned
       </h1>
       <p
         className={`${font.poppins.variable} antialiased text-3xl text-white text-center text-clip`}
@@ -64,8 +64,17 @@ export default function () {
           className="text-blue-500 underline hover:text-blue-700"
         >
           Theo-T3.gg
-        </Link>
-        (He's a really great guy you should check him out)
+        </Link>{" "}
+        (He's a really great guy you should check him out) and he inspired me to
+        get back into web development. I realised that such a things as
+        JavaScript frameworks and since I like JavaScript so much I figured I
+        would try one. But what framework to chose? I tried the framework theo
+        uses and I instantly fell in love. Im not a huge fan of typescript so I
+        just used NextJS with JavaScript. But it felt inuitive and the courses
+        on the NextJS website are so helpful. I makes web development fun for
+        me, and I even switched from Github Pages to Vercel for hosting. I look
+        forward to the future of my web dev journey and will continue to post on
+        this blog!
       </p>
     </div>
   );
