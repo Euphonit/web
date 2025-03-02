@@ -23,7 +23,9 @@ export default function () {
         In this blog I want to talk about how I started and how I ended up at
         web development
       </p>
-      <h1 className="text-5xl font-semibold text-white text-center text-clip">
+      <h1
+        className={`${font.poppins.variable} antialiased text-5xl font-semibold text-white text-center text-clip`}
+      >
         <br />
         Part 1: The start
       </h1>
@@ -48,7 +50,9 @@ export default function () {
         like. I was also infuriated with how importing fonts in CSS worked. All
         these factors eventually made me quit learning for a long time.
       </p>
-      <h1 className="text-5xl text-white font-semibold text-center text-clip">
+      <h1
+        className={`${font.poppins.variable} antialiased text-5xl text-white font-semibold text-center text-clip`}
+      >
         <br />
         Part 2: Why, and how I returned
       </h1>
