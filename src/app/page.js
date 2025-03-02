@@ -9,6 +9,11 @@ export default function Home() {
       >
         <Link href="/pages/blog">Click Here to go to my blog</Link>
       </p>
+      <p
+        className={`${font.poppins.variable} antialiased text-lg bg-blue-500 text-white px-4 py-2 rounded-md font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 // Optional active state`}
+      >
+        <Link href="/pages/hunter">Hunter Mode</Link>
+      </p>
       <h1 className={`${font.poppins.variable} antialiased text-clip text-4xl`}>
         Hello, im Daniel Crutti (euphonit) and this is my website!
         <br /> Picture of Me:
