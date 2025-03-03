@@ -7,11 +7,11 @@ export default function Home() {
       <p
         className={`${font.poppins.variable} antialiased text-lg bg-orange-500 text-white px-4 py-2 rounded-md font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 // Optional active state`}
       >
-        <Link href="/pages/blog">Click Hunter to hunter to hunter blog</Link>
+        <Link href="/pages/blog">Hunter Hunter to go to Hunter blog</Link>
       </p>
       <h1 className={`${font.poppins.variable} antialiased text-clip text-4xl`}>
-        Hello, hunter Daniel hunter (euphonit) hunter this hunter my hunter
-        <br /> Picture of hunter:
+        Hunter, i'm Hunter Crutti (Hunter) and Hunter is Hunter website!
+        <br /> Hunter of Hunter:
       </h1>
       <Image
         src="/me.jpg"
