@@ -3,6 +3,7 @@
   "specifiers": {
     "npm:@eslint/eslintrc@^3.3.0": "3.3.0",
     "npm:@tailwindcss/postcss@^4.0.9": "4.0.9",
+    "npm:@vercel/speed-insights@^1.2.0": "1.2.0_next@15.2.0__react@19.0.0__react-dom@19.0.0___react@19.0.0_react@19.0.0_react-dom@19.0.0__react@19.0.0",
     "npm:eslint-config-next@15.2.0": "15.2.0_eslint@9.21.0_@typescript-eslint+parser@8.25.0__eslint@9.21.0__typescript@5.7.3_eslint-plugin-import@2.31.0__eslint@9.21.0",
     "npm:eslint@^9.21.0": "9.21.0",
     "npm:next@15.2.0": "15.2.0_react@19.0.0_react-dom@19.0.0__react@19.0.0",
@@ -400,6 +401,13 @@
       "dependencies": [
         "@typescript-eslint/types",
         "eslint-visitor-keys@4.2.0"
+      ]
+    },
+    "@vercel/speed-insights@1.2.0_next@15.2.0__react@19.0.0__react-dom@19.0.0___react@19.0.0_react@19.0.0_react-dom@19.0.0__react@19.0.0": {
+      "integrity": "sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==",
+      "dependencies": [
+        "next",
+        "react"
       ]
     },
     "acorn-jsx@5.3.2_acorn@8.14.0": {
@@ -2212,6 +2220,7 @@
       "dependencies": [
         "npm:@eslint/eslintrc@^3.3.0",
         "npm:@tailwindcss/postcss@^4.0.9",
+        "npm:@vercel/speed-insights@^1.2.0",
         "npm:eslint-config-next@15.2.0",
         "npm:eslint@^9.21.0",
         "npm:next@15.2.0",

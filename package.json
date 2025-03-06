@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.9",
+    "@vercel/speed-insights": "^1.2.0",
     "eslint": "^9.21.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
