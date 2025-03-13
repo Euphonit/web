@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as font from "../../../../components/font";
 
-export default function () {
+export default function GitPage() {
   return (
     <div>
       <p
