@@ -48,8 +48,6 @@ export default async function PhotoHome() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {" "}
-              {/* Added link */}
               <Image
                 src={`/Photography/best/${photo}`}
                 alt={photo}
@@ -57,8 +55,7 @@ export default async function PhotoHome() {
                 style={{ objectFit: "cover" }}
                 className="hover:scale-105 transition-transform duration-200"
               />
-            </a>{" "}
-            {/* Added link */}
+            </a>
           </div>
         ))}
       </div>
