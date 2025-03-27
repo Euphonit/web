@@ -15,10 +15,20 @@ export default function () {
         Blog Zone
       </h1>
       <p
+        className="--font-poppins antialiased text-2xl bg-orange-700 rounded-md
+        active:bg-orange-800 transition-colors duration-200 font-light px-4 py-2
+        cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2
+        focus:ring-orange-500 focus:ring-offset-2"
+      >
+        <Link href="/pages/blog/blogs/theaquit">
+          3# Our lead male just quit our theater show (Mar 20, 2025)
+        </Link>
+      </p>
+      <p
         className="--font-poppins antialiased text-2xl bg-purple-700 rounded-md
         active:bg-purple-800 transition-colors duration-200 font-light px-4 py-2
         cursor-pointer hover:bg-purple-600 focus:outline-none focus:ring-2
-        focus:ring-green-500 focus:ring-offset-2"
+        focus:ring-purple-500 focus:ring-offset-2"
       >
         <Link href="/pages/blog/blogs/musfil">
           2# Why did we abandon music files? (Mar 16, 2025)
