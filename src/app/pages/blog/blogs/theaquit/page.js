@@ -31,7 +31,8 @@ export default function GitPage() {
         today and tells the teacher he is skipping this rehearsal. She is
         obviously furious because he said he would come today. She said there
         are no exceptions for just cause he is the lead and if he refuses to
-        attend this rehearsal he's out of the show.
+        attend this rehearsal he's out of the show. Then he just walks out of
+        the room.
       </p>
     </div>
   );
