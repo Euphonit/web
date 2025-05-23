@@ -1,29 +1,78 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import fs from "fs/promises";
-import path from "path";
 import "../../components/font";
+import PasswordProtect from '../../components/PasswordProtect.js';
+import Cookies from 'js-cookie';
 
-async function getPhotos() {
-  const photosDirectory = path.join(
-    process.cwd(),
-    "public",
-    "Photography",
-    "best",
-  );
-  try {
-    const filenames = await fs.readdir(photosDirectory);
-    return filenames.filter((filename) =>
-      /\.(JPG|jpg|webp|png|gif)$/i.test(filename),
-    );
-  } catch (error) {
-    console.error("Error reading photos directory:", error);
-    return [];
+export default function PhotoHome() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // For initial auth check
+  const [photos, setPhotos] = useState([]);
+  const [photoError, setPhotoError] = useState(null);
+  const [isPhotosLoading, setIsPhotosLoading] = useState(false); // For photos fetch
+
+  useEffect(() => {
+    const authCookie = Cookies.get('photoAuth');
+    if (authCookie === 'true') {
+      setIsAuthenticated(true);
+    }
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      setIsPhotosLoading(true);
+      setPhotoError(null);
+      setPhotos([]); // Clear previous photos
+
+      fetch('/api/get-photos')
+        .then(async (res) => {
+          if (res.ok) {
+            const data = await res.json();
+            setPhotos(data.photos || []);
+          } else {
+            let errorMessage = "Failed to load photos.";
+            try {
+              const data = await res.json();
+              if (data && data.error) {
+                errorMessage = data.error;
+              }
+            } catch (e) {
+              // Ignore parsing error, use default message
+            }
+            setPhotoError(errorMessage);
+            if (res.status === 401) {
+              // Potentially de-authenticate if token is invalid
+              // This might cause a loop if the cookie is still there and invalid
+              // For now, just show error. A robust solution might involve clearing the cookie.
+              console.warn("Photo API returned 401, consider re-authentication flow.");
+            }
+          }
+        })
+        .catch((err) => {
+          console.error("Error fetching photos:", err);
+          setPhotoError("An unexpected error occurred while fetching photos.");
+        })
+        .finally(() => {
+          setIsPhotosLoading(false);
+        });
+    }
+  }, [isAuthenticated]);
+
+  const handlePasswordVerified = () => {
+    setIsAuthenticated(true);
+  };
+
+  if (isLoading) {
+    return <p className="text-xl --font-poppins text-gray-300 flex justify-center items-center min-h-[calc(100vh-200px)]">Loading...</p>;
   }
-}
 
-export default async function PhotoHome() {
-  const photos = await getPhotos();
+  if (!isAuthenticated) {
+    return <PasswordProtect onPasswordVerified={handlePasswordVerified} />;
+  }
 
   return (
     <div>
@@ -39,29 +88,36 @@ export default async function PhotoHome() {
       <p className="--font-poppins antialiased text-lg bg-green-500 text-white px-4 py-2 rounded-md font-medium cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 active:bg-green-700">
         <Link href="/pages/photo/1">Batch 1</Link>
       </p>
-      <p className="--font-poppins antialiased text-6xl text-white">
-        Best of Photos (Click on them for better quality):
-      </p>
 
-      <div className="grid grid-cols-4 gap-4">
-        {photos.map((photo) => (
-          <div key={photo} className="relative aspect-square overflow-hidden">
-            <a
-              href={`/Photography/best/${photo}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={`/Photography/best/${photo}`}
-                alt={photo}
-                fill
-                style={{ objectFit: "cover" }}
-                className="hover:scale-105 transition-transform duration-200"
-              />
-            </a>
+      {isPhotosLoading && <p className="text-xl --font-poppins text-gray-300 mt-8 text-center">Loading photos...</p>}
+      {photoError && <p className="text-red-500 --font-poppins mt-8 text-center text-lg">Error: {photoError}</p>}
+      
+      {!isPhotosLoading && !photoError && (
+        <>
+          <p className="--font-poppins antialiased text-6xl text-white">
+            Best of Photos (Click on them for better quality):
+          </p>
+          <div className="grid grid-cols-4 gap-4">
+            {photos.map((photo) => (
+              <div key={photo} className="relative aspect-square overflow-hidden">
+                <a
+                  href={`/Photography/best/${photo}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={`/Photography/best/${photo}`}
+                    alt={photo}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="hover:scale-105 transition-transform duration-200"
+                  />
+                </a>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </div>
   );
 }
