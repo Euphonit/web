@@ -67,7 +67,7 @@ export default function PhotoHome() {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="text-xl --font-poppins text-gray-300 flex justify-center items-center min-h-[calc(100vh-200px)]">Loading...</p>;
   }
 
   if (!isAuthenticated) {
@@ -89,8 +89,8 @@ export default function PhotoHome() {
         <Link href="/pages/photo/1">Batch 1</Link>
       </p>
 
-      {isPhotosLoading && <p className="--font-poppins antialiased text-xl text-white">Loading photos...</p>}
-      {photoError && <p className="--font-poppins antialiased text-xl text-red-500">Error: {photoError}</p>}
+      {isPhotosLoading && <p className="text-xl --font-poppins text-gray-300 mt-8 text-center">Loading photos...</p>}
+      {photoError && <p className="text-red-500 --font-poppins mt-8 text-center text-lg">Error: {photoError}</p>}
       
       {!isPhotosLoading && !photoError && (
         <>
