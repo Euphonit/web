@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import "../../components/font";
 import PasswordProtect from '../../components/PasswordProtect.js';
-import Cookies from 'js-cookie';
 
 export default function PhotoHome() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -15,11 +14,26 @@ export default function PhotoHome() {
   const [isPhotosLoading, setIsPhotosLoading] = useState(false); // For photos fetch
 
   useEffect(() => {
-    const authCookie = Cookies.get('photoAuth');
-    if (authCookie === 'true') {
-      setIsAuthenticated(true);
-    }
-    setIsLoading(false);
+    const checkAuthStatus = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/api/check-auth');
+        if (response.ok) {
+          const data = await response.json();
+          setIsAuthenticated(data.isAuthenticated);
+        } else {
+          console.error('Auth check failed:', response.status, response.statusText);
+          setIsAuthenticated(false);
+        }
+      } catch (error) {
+        console.error('Error fetching auth status:', error);
+        setIsAuthenticated(false);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkAuthStatus();
   }, []);
 
   useEffect(() => {
