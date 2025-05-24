@@ -3,25 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
-    "buildturbo": "next build --turbopack",
+    "buildturbo": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.4",
+    "@tailwindcss/postcss": "^4.1.7",
     "@vercel/speed-insights": "^1.2.0",
-    "eslint": "^9.25.0",
+    "eslint": "^9.27.0",
     "js-cookie": "^3.0.5",
-    "next": "15.3.1",
+    "next": "15.4.0-canary.50",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "eslint-config-next": "15.3.1"
+    "eslint-config-next": "15.4.0-canary.50"
   }
 }
