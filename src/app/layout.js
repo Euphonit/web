@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Daniel Crutti",
-  description: "Website for Daniel Crutti",
+  description: "Daniel Crutti's website",
 };
 
 export default function RootLayout({ children }) {

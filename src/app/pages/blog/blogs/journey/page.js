@@ -4,34 +4,24 @@ import * as font from "../../../../components/font";
 export default function () {
   return (
     <div>
-      <p
-        className={`${font.poppins.variable} antialiased text-2xl bg-blue-500 px-4 py-2 rounded-md cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 // Optional active state`}
-      >
+      <p className="--font-poppins antialiased text-2xl bg-blue-500 px-4 py-2 rounded-md cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700">
         <Link href="/pages/blog">Back to blog home</Link>
       </p>
-      <h1
-        className={`${font.poppins.variable} antialiased font-bold text-7xl text-center text-white bg-red-700`}
-      >
+      <h1 className="--font-poppinsantialiased font-bold text-7xl text-center text-white bg-red-700">
         1# My Dev Journey so far (Feb. 22 2025)
       </h1>
       <br />
-      <p
-        className={`${font.poppins.variable} antialiased text-3xl text-white text-center text-clip`}
-      >
+      <p className="--font-poppins antialiased text-3xl text-white text-center text-clip">
         It was almost a year to the day when I decided to learn "how to code"{" "}
         <br />
         In this blog I want to talk about how I started and how I ended up at
         web development
       </p>
-      <h1
-        className={`${font.poppins.variable} antialiased text-5xl font-semibold text-white text-center text-clip`}
-      >
+      <h1 className="--font-poppins antialiased text-5xl font-semibold text-white text-center text-clip">
         <br />
         Part 1: The start
       </h1>
-      <p
-        className={`${font.poppins.variable} antialiased text-3xl text-white text-center text-clip`}
-      >
+      <p className="--font-poppins antialiased text-3xl text-white text-center text-clip">
         Every developer, at the start, has to choose a programming language. For
         most people, they will just search up "easy programming language" and
         choose the first thing, usually Python. Some smart ones decide based on
@@ -50,15 +40,11 @@ export default function () {
         like. I was also infuriated with how importing fonts in CSS worked. All
         these factors eventually made me quit learning for a long time.
       </p>
-      <h1
-        className={`${font.poppins.variable} antialiased text-5xl text-white font-semibold text-center text-clip`}
-      >
+      <h1 className="--font-poppins antialiased text-5xl text-white font-semibold text-center text-clip">
         <br />
         Part 2: Why, and how I returned
       </h1>
-      <p
-        className={`${font.poppins.variable} antialiased text-3xl text-white text-center text-clip`}
-      >
+      <p className="--font-poppins antialiased text-3xl text-white text-center text-clip">
         I really got back into it because it was later in school year and I was
         a minor tech person in the school Musical. I had alot of free time and I
         wanted to do something with that time. I watch this developer youtuber

@@ -1,23 +1,37 @@
 import "../../components/font";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Daniel's Blog",
+  description: "Daniel Crutti's Blog",
+};
 export default function () {
   return (
     <div className="">
       <p
         className="--font-poppins antialiased text-2xl bg-blue-500 px-4 py-2 rounded-md
       cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500
-      focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 // Optional active state"
+      focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700"
       >
         <Link href="../..">Click Here to go to go Home</Link>
       </p>
-      <h1 className="--font-poppins antialiased text-8xl font-bold text-center bg-red-500">
-        Blog Zone
+      <h1 className="--font-poppins antialiased text-7xl font-bold text-center bg-green-900 p-3">
+        Daniel Crutti's Blog
       </h1>
       <p
+        className="--font-poppins antialiased text-2xl bg-teal-600 rounded-md
+        active:bg-teal-800 transition-colors duration-200 font-light px-4 py-2
+        cursor-pointer hover:bg-teal-700 focus:outline-none focus:ring-2
+        focus:ring-teal-500 focus:ring-offset-2"
+      >
+        <Link href="/pages/blog/blogs/8thyear">
+          4# My Year (May 25, 2025) (Password Protected)
+        </Link>
+      </p>
+      <p
         className="--font-poppins antialiased text-2xl bg-orange-700 rounded-md
-        active:bg-orange-800 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2
+        active:bg-orange-900 transition-colors duration-200 font-light px-4 py-2
+        cursor-pointer hover:bg-orange-800 focus:outline-none focus:ring-2
         focus:ring-orange-500 focus:ring-offset-2"
       >
         <Link href="/pages/blog/blogs/theaquit">
@@ -26,8 +40,8 @@ export default function () {
       </p>
       <p
         className="--font-poppins antialiased text-2xl bg-purple-700 rounded-md
-        active:bg-purple-800 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-purple-600 focus:outline-none focus:ring-2
+        active:bg-purple-900 transition-colors duration-200 font-light px-4 py-2
+        cursor-pointer hover:bg-purple-800 focus:outline-none focus:ring-2
         focus:ring-purple-500 focus:ring-offset-2"
       >
         <Link href="/pages/blog/blogs/musfil">

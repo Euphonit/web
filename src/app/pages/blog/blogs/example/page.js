@@ -7,7 +7,7 @@ export default function GitPage() {
       <p
         className="--font-poppins antialiased text-2xl bg-blue-500 px-4 py-2 rounded-md
         cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500
-        focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 // Optional active state"
+        focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700"
       >
         <Link href="/pages/blog">Back to blog home</Link>
       </p>
