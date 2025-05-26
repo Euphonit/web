@@ -14,7 +14,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "eslint": "^9.27.0",
     "js-cookie": "^3.0.5",
-    "next": "15.4.0-canary.52",
+    "next": "^15.3.2",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
