@@ -5,6 +5,7 @@ export const metadata = {
   title: "Daniel's Blog",
   description: "Daniel Crutti's Blog",
 };
+
 export default function () {
   return (
     <div className="">
