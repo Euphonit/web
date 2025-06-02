@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Set the directory containing the JPEG files
-input_dir="/Users/daniel/Code/web/public/Photography/3"  # Replace with the actual path
+input_dir="/Users/daniel/Code/web/public/Photography/4"  # Replace with the actual path
 
 # Set the directory where you want to save the WebP files
-output_dir="/Users/daniel/Code/web/public/Photography/3"  # Replace with the desired output path
+output_dir="/Users/daniel/Code/web/public/Photography/4"  # Replace with the desired output path
 
 # Ensure the output directory exists.  If it doesn't, create it.
 mkdir -p "$output_dir"
