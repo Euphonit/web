@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function EighthYearBlog() {
   return (
-    <div>
+    <div className="p-4 md:p-8">
       <p
         className="--font-poppins antialiased text-2xl bg-blue-500 px-4 py-2 rounded-md
       cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500
@@ -17,7 +17,7 @@ export default function EighthYearBlog() {
           My new expensive hobby
         </p>
       </div>
-      <p className="--font-poppins antialiased font-medium text-xl text-center mt-1">
+      <p className="--font-poppins antialiased font-medium text-2xl text-center mt-12">
         I attended VCF Southwest this year, and there was a room dedicated to
         minidiscs. If you don't know minidisc is a digital audio disc format
         that was popular in the late 1990s and early 2000s. It was a compact
