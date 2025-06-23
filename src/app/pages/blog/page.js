@@ -20,6 +20,16 @@ export default function () {
         Daniel Crutti's Blog
       </h1>
       <p
+        className="--font-poppins antialiased text-2xl bg-blue-500 rounded-md
+        active:bg-blue-800 transition-colors duration-200 font-light px-4 py-2
+        cursor-pointer hover:bg-blue-700 focus:outline-none focus:ring-2
+        focus:ring-blue-500 focus:ring-offset-2"
+      >
+        <Link href="/pages/blog/blogs/minidisc">
+          5# MiniDisc (Jun 23, 2025)
+        </Link>
+      </p>
+      <p
         className="--font-poppins antialiased text-2xl bg-teal-600 rounded-md
         active:bg-teal-800 transition-colors duration-200 font-light px-4 py-2
         cursor-pointer hover:bg-teal-700 focus:outline-none focus:ring-2

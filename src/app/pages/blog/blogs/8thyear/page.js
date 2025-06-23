@@ -74,8 +74,8 @@ export default function EighthYearBlog() {
         soooooo boring. I don't get to hang out with my friends. I have so much
         to do this summer but I also don't have anything. The boring days feel
         like they last so long. I'm still glad I had the expirience though. I
-        met some of my best friends like Onan, Addison, Summer, Foxy, and
-        O'neill. I also figured out alot about my future in life, and how I
+        met some of my best friends like Onan, Addison, Hunter, Foxy, Athena,
+        and O'neill. I also figured out alot about my future in life, and how I
         think about my life and everything.
       </p>
     </div>
