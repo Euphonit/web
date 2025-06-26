@@ -6,20 +6,19 @@
     "dev": "next dev --turbopack",
     "devnoturbo": "next dev",
     "build": "next build",
-    "buildturbo": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.11",
     "@vercel/speed-insights": "^1.2.0",
     "eslint": "^9.29.0",
     "js-cookie": "^3.0.5",
-    "next": "^15.3.4",
+    "next": "^15.4.0",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
