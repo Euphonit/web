@@ -10,7 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.3.4",
     "@tailwindcss/postcss": "^4.1.11",
+    "@types/mdx": "^2.0.13",
     "@vercel/speed-insights": "^1.2.0",
     "eslint": "^9.29.0",
     "js-cookie": "^3.0.5",
