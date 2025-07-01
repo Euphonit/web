@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "../../components/font";
-import PasswordProtect from "../../components/PasswordProtect.js";
+import PasswordProtect from "../../components/PasswordProtect.jsx";
 
 export default function PhotoHome() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
