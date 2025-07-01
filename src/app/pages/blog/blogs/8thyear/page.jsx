@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import PasswordProtect from "../../../../components/PasswordProtect.js";
+import PasswordProtect from "../../../../components/PasswordProtect.jsx";
 
 export default function EighthYearBlog() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
