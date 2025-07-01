@@ -18,11 +18,11 @@ export default function Home() {
         <br /> Picture of Me:
       </h1>
       <Image
-        src="/me.jpg"
+        src="/Photography/4/DSC00088.webp"
         width={500}
         height={500}
-        title="Me hunter Applebees hunter friends. hunter using hunter Photo hunter on hunter MacBook hunter"
-        alt="Me at Applebees with friends. Taken using MacOS Photo Booth on 2015 MacBook Air"
+        title="Me last day of school with my best friend."
+        alt="Me last day of school with my best friend."
       />
     </div>
   );

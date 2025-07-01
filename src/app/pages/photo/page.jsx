@@ -103,6 +103,9 @@ export default function PhotoHome() {
       <p className="--font-poppins antialiased text-lg bg-orange-500 text-white px-4 py-2 rounded-md font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700">
         <Link href="/">Home</Link>
       </p>
+      <p className="--font-poppins antialiased text-lg bg-amber-500 text-white px-4 py-2 rounded-md font-medium cursor-pointer hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transition-colors duration-200 active:bg-amber-700">
+        <Link href="/pages/photo/5">Batch 5</Link>
+      </p>
       <p className="--font-poppins antialiased text-lg bg-teal-500 text-white px-4 py-2 rounded-md font-medium cursor-pointer hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors duration-200 active:bg-teal-700">
         <Link href="/pages/photo/4">Batch 4</Link>
       </p>
