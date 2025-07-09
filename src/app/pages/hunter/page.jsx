@@ -90,11 +90,11 @@ export default function Hunter() {
         <div>
           <Image
             className="rounded-2xl"
-            src="/Photography/5/DSC00012.webp"
-            width={500}
-            height={500}
-            title="this is daniel idk wtf hunter is doing"
-            alt="hunter in a boat"
+            src="/Photography/5/DSC00033.JPG"
+            width={713}
+            height={535}
+            title="(daniel) idk wtf hunter is doing being sped ig"
+            alt="hunter being sped"
           />
         </div>
       </div>
