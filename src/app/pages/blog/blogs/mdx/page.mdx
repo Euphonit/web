@@ -1,7 +1,29 @@
 import HomeButton from "../../../../components/blogcomp.jsx";
 
-<HomeButton titletext="MDX TIME BABY" titlesub="I finally did it"/>
-<div className="text-center">
-    <br/>
-    This is some **bold** and _italics_ text.
+<HomeButton title="Site Update #1: The Rounded Update" sub="Rounded Corners, Better Buttons, partial MDX, Password API improvements, and more!" />
+
+<div className="--font-poppins antialiased font-medium text-center text-xl mt-2 px-4 md:px-8">
+    <div className="text-2xl">
+    I'm on a roadtrip as of writing this, and I have ***alot*** of time on my hands so I decided to update the website!
+    </div>
+    <div className="--font-poppins antialiased font-medium text-center text-5xl text-clip flex items-start mt-1"> 1. Rounded Corners</div>
+    <div className="mt-2">
+    I love modern designs. Especially the design of apple products. So I went around and made alot of elements rounded and just have a nicer look in general. I think it came out great!
+    </div>
+    <div className="--font-poppins antialiased font-medium text-center text-5xl text-clip flex items-start mt-1"> 2. Better Buttons</div>
+    <div className="mt-2">
+        So this one isn't really noticible as an end-user thing, but I am not using `<button>` elements instead of `<p>` with Nextjs `<Link>` tags wrapped in them. I think this should help the website have more customizability.
+    </div>
+    <div className="--font-poppins antialiased font-medium text-center text-5xl text-clip flex items-start mt-1"> 3. MDX</div>
+    <div className="mt-2">
+    I heard about MDX on youtube as a way to write blogs easier. I love markdown so I thought this would be a **great** tool to add. I also thought it would be easy to implement. According to most places online it _should_ be easy implement. The only issue is that MDX chooses to wrap my content in a `<p>` tag. This means I can't use Markdown headings. I know there is probaly some super simple way around this, but i'm to stupid to figure it out.
+    </div>
+    <div className="--font-poppins antialiased font-medium text-center text-5xl text-clip flex items-start mt-1"> 4. Password API</div>
+    <div className="mt-2">
+        So for all the passworded pages I have an internal API that does all the auth stuff. I made it alot more secure by keeping the password in an env file instead of hardcoded into the password function.
+    </div>
+    <br />
+    <div className="mt-2">
+    I hope you enjoy the website update! If you have an feedback feel free to email me at dancrutti@gmail.com
+    </div>
 </div>

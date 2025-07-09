@@ -27,20 +27,22 @@ export default async function PhotoPage() {
 
   return (
     <div>
-      <p className="--font-poppins antialiased text-lg bg-orange-500 text-white px-4 py-2 rounded-md font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700">
-        <Link href="/pages/photo">Gallery Home</Link>
-      </p>
-
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid">
+        <button className="--font-poppins antialiased text-2xl bg-teal-500 text-white px-4 py-2 mt-1 ml-0.5 mr-0.5 mb-1 rounded-3xl font-medium cursor-pointer hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors duration-200 active:bg-teal-700">
+          <Link href="/pages/photo">📷 Photography</Link>
+        </button>
+      </div>
+      <div className="grid grid-cols-4 gap-1.5">
         {photos.map((photo) => (
-          <div key={photo} className="relative aspect-square overflow-hidden">
+          <div
+            key={photo}
+            className="relative aspect-square overflow-hidden rounded-2xl"
+          >
             <a
               href={`/Photography/4/${photo}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {" "}
-              {/* Added link */}
               <Image
                 src={`/Photography/4/${photo}`}
                 alt={photo}
@@ -48,8 +50,7 @@ export default async function PhotoPage() {
                 style={{ objectFit: "cover" }}
                 className="hover:scale-105 transition-transform duration-200"
               />
-            </a>{" "}
-            {/* Added link */}
+            </a>
           </div>
         ))}
       </div>

@@ -4,8 +4,7 @@ export async function POST(request) {
   try {
     const { password } = await request.json();
 
-    // TODO: Store this securely as an environment variable (e.g., process.env.PHOTO_PAGE_PASSWORD)
-    const correctPassword = "oldsquid";
+    const correctPassword = process.env.WEBSITE_PASSWORD;
 
     if (password === correctPassword) {
       const response = NextResponse.json({ success: true });
@@ -14,7 +13,7 @@ export async function POST(request) {
         secure: process.env.NODE_ENV !== "development", // Use secure in production
         path: "/",
         sameSite: "Strict",
-        maxAge: 3600, // 1 hour
+        maxAge: 604800, // 1 week
       });
       return response;
     } else {
