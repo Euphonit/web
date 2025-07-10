@@ -101,51 +101,38 @@ export default function PhotoHome() {
   return (
     <div>
       <div className="grid">
-        <button className="--font-poppins antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 ml-0.5 mr-0.5 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700">
-          <Link href="/">🏠 Daniel's Website</Link>
-        </button>
+        <Link href="/">
+          <button className="--font-poppins antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 w-full">
+            🏠 Daniel's Website
+          </button>
+        </Link>
       </div>
       <div className="grid">
-        <p
-          className="--font-poppins antialiased text-2xl bg-zinc-500 mt-1 ml-1 mr-1 rounded-4xl
-      active:bg-zinc-700 transition-colors duration-200 font-light px-4 py-2
-      cursor-pointer hover:bg-zinc-600 focus:outline-none focus:ring-2
-      focus:ring-zinc-500 focus:ring-offset-2"
-        >
-          <Link href="/pages/photo/5">Batch 5</Link>
-        </p>
-        <p
-          className="--font-poppins antialiased text-2xl bg-teal-500 mt-1 ml-1 mr-1 rounded-4xl
-        active:bg-teal-700 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-teal-600 focus:outline-none focus:ring-2
-        focus:ring-teal-300 focus:ring-offset-2"
-        >
-          <Link href="/pages/photo/4">Batch 4</Link>
-        </p>
-        <p
-          className="--font-poppins antialiased text-2xl bg-blue-500 mt-1 ml-1 mr-1 rounded-4xl
-      active:bg-blue-700 transition-colors duration-200 font-light px-4 py-2
-      cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2
-      focus:ring-blue-300 focus:ring-offset-2"
-        >
-          <Link href="/pages/photo/3">Batch 3</Link>
-        </p>
-        <p
-          className="--font-poppins antialiased text-2xl bg-violet-500 mt-1 ml-1 mr-1 rounded-4xl
-      active:bg-violet-800 transition-colors duration-200 font-light px-4 py-2
-      cursor-pointer hover:bg-violet-700 focus:outline-none focus:ring-2
-      focus:ring-violet-300 focus:ring-offset-2"
-        >
-          <Link href="/pages/photo/2">Batch 2</Link>
-        </p>
-        <p
-          className="--font-poppins antialiased text-2xl bg-green-500 mt-1 ml-1 mr-1 rounded-4xl
-      active:bg-green-700 transition-colors duration-200 font-light px-4 py-2
-      cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2
-      focus:ring-green-300 focus:ring-offset-2"
-        >
-          <Link href="/pages/photo/1">Batch 1</Link>
-        </p>
+        <Link href="/pages/photo/5">
+          <button className="--font-poppins antialiased text-2xl bg-zinc-500 mt-1 rounded-4xl active:bg-zinc-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 w-full">
+            Batch 5
+          </button>
+        </Link>
+        <Link href="/pages/photo/4">
+          <button className="--font-poppins antialiased text-2xl bg-teal-500 mt-1 rounded-4xl active:bg-teal-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-offset-2 w-full">
+            Batch 4
+          </button>
+        </Link>
+        <Link href="/pages/photo/3">
+          <button className="--font-poppins antialiased text-2xl bg-blue-500 mt-1 rounded-4xl active:bg-blue-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 w-full">
+            Batch 3
+          </button>
+        </Link>
+        <Link href="/pages/photo/2">
+          <button className="--font-poppins antialiased text-2xl bg-violet-500 mt-1 rounded-4xl active:bg-violet-800 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:ring-offset-2 w-full">
+            Batch 2
+          </button>
+        </Link>
+        <Link href="/pages/photo/1">
+          <button className="--font-poppins antialiased text-2xl bg-green-500 mt-1 rounded-4xl active:bg-green-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 w-full">
+            Batch 1
+          </button>
+        </Link>
       </div>
 
       {isPhotosLoading && (

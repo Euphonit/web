@@ -57,15 +57,21 @@ export default function Hunter() {
   return (
     <div className="">
       <div className="grid grid-cols-3">
-        <button className="--font-poppins antialiased text-2xl bg-blue-500 text-white px-4 py-2 mt-1 ml-0.5 mr-0.5 rounded-3xl font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700">
-          <Link href="/pages/blog">📝 Daniel's Blog</Link>
-        </button>
-        <button className="--font-poppins antialiased text-2xl bg-green-500 text-white px-4 py-2 mt-1 ml-0.5 mr-0.5 rounded-3xl font-medium cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 active:bg-green-700">
-          <Link href="/">🏠 Daniel's Website</Link>
-        </button>
-        <button className="--font-poppins antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 ml-0.5 mr-0.5 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700">
-          <Link href="/pages/photo">📷 Daniel's Photography</Link>
-        </button>
+        <Link href="/pages/blog">
+          <button className="--font-poppins antialiased text-2xl bg-blue-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 w-full">
+            📝 Daniel's Blog
+          </button>
+        </Link>
+        <Link href="/">
+          <button className="--font-poppins antialiased text-2xl bg-green-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 active:bg-green-700 w-full">
+            🏠 Daniel's Website
+          </button>
+        </Link>
+        <Link href="/pages/photo">
+          <button className="--font-poppins antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 w-full">
+            📷 Daniel's Photography
+          </button>
+        </Link>
       </div>
       <div className="flex flex-col items-center">
         <p className="--font-poppins antialiased text-clip text-4xl">
