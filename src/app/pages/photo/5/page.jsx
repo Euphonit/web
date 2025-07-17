@@ -5,17 +5,10 @@ import path from "path";
 import "../../../components/font";
 
 async function getPhotos() {
-  const photosDirectory = path.join(
-    process.cwd(),
-    "public",
-    "Photography",
-    "5",
-  );
+  const photosDirectory = path.join(process.cwd(), "public", "Photography", "5");
   try {
     const filenames = await fs.readdir(photosDirectory);
-    return filenames.filter((filename) =>
-      /\.(JPG|jpg|webp|png|gif)$/i.test(filename),
-    );
+    return filenames.filter((filename) => /\.(JPG|jpg|webp|png|gif)$/i.test(filename));
   } catch (error) {
     console.error("Error reading photos directory:", error);
     return [];
@@ -29,22 +22,15 @@ export default async function PhotoPage() {
     <div>
       <div className="grid">
         <Link href="/pages/photo">
-          <button className="--font-poppins antialiased text-2xl bg-zinc-500 text-white px-4 py-2 mt-1 mb-1 rounded-3xl font-medium cursor-pointer hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 transition-colors duration-200 active:bg-zinc-700 w-full">
+          <button className="antialiased text-2xl bg-zinc-500 text-white px-4 py-2 mt-1 mb-1 rounded-3xl font-medium cursor-pointer hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 transition-colors duration-200 active:bg-zinc-700 w-full">
             📷 Photography
           </button>
         </Link>
       </div>
       <div className="grid grid-cols-4 gap-1.5">
         {photos.map((photo) => (
-          <div
-            key={photo}
-            className="relative aspect-square overflow-hidden rounded-2xl"
-          >
-            <a
-              href={`/Photography/5/${photo}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <div key={photo} className="relative aspect-square overflow-hidden rounded-2xl">
+            <a href={`/Photography/5/${photo}`} target="_blank" rel="noopener noreferrer">
               <Image
                 src={`/Photography/5/${photo}`}
                 alt={photo}

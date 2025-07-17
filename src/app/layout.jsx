@@ -1,5 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+import "./components/font";
 
 export const metadata = {
   title: "Daniel Crutti",
@@ -9,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-blue-950 text-white">
+      <body className="--font-poppins bg-blue-950 text-white">
         {children}
         <SpeedInsights />
       </body>

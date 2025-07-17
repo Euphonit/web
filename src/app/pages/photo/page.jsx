@@ -22,11 +22,7 @@ export default function PhotoHome() {
           const data = await response.json();
           setIsAuthenticated(data.isAuthenticated);
         } else {
-          console.error(
-            "Auth check failed:",
-            response.status,
-            response.statusText,
-          );
+          console.error("Auth check failed:", response.status, response.statusText);
           setIsAuthenticated(false);
         }
       } catch (error) {
@@ -66,9 +62,7 @@ export default function PhotoHome() {
               // Potentially de-authenticate if token is invalid
               // This might cause a loop if the cookie is still there and invalid
               // For now, just show error. A robust solution might involve clearing the cookie.
-              console.warn(
-                "Photo API returned 401, consider re-authentication flow.",
-              );
+              console.warn("Photo API returned 401, consider re-authentication flow.");
             }
           }
         })
@@ -88,7 +82,7 @@ export default function PhotoHome() {
 
   if (isLoading) {
     return (
-      <p className="text-xl --font-poppins text-gray-300 flex justify-center items-center min-h-[calc(100vh-200px)]">
+      <p className="text-xl text-gray-300 flex justify-center items-center min-h-[calc(100vh-200px)]">
         Loading...
       </p>
     );
@@ -102,66 +96,51 @@ export default function PhotoHome() {
     <div>
       <div className="grid">
         <Link href="/">
-          <button className="--font-poppins antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 w-full">
+          <button className="antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 w-full">
             🏠 Daniel's Website
           </button>
         </Link>
       </div>
       <div className="grid">
         <Link href="/pages/photo/5">
-          <button className="--font-poppins antialiased text-2xl bg-zinc-500 mt-1 rounded-4xl active:bg-zinc-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 w-full">
+          <button className="antialiased text-2xl bg-zinc-500 mt-1 rounded-4xl active:bg-zinc-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 w-full">
             Batch 5
           </button>
         </Link>
         <Link href="/pages/photo/4">
-          <button className="--font-poppins antialiased text-2xl bg-teal-500 mt-1 rounded-4xl active:bg-teal-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-offset-2 w-full">
+          <button className="antialiased text-2xl bg-teal-500 mt-1 rounded-4xl active:bg-teal-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-offset-2 w-full">
             Batch 4
           </button>
         </Link>
         <Link href="/pages/photo/3">
-          <button className="--font-poppins antialiased text-2xl bg-blue-500 mt-1 rounded-4xl active:bg-blue-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 w-full">
+          <button className="antialiased text-2xl bg-blue-500 mt-1 rounded-4xl active:bg-blue-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 w-full">
             Batch 3
           </button>
         </Link>
         <Link href="/pages/photo/2">
-          <button className="--font-poppins antialiased text-2xl bg-violet-500 mt-1 rounded-4xl active:bg-violet-800 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:ring-offset-2 w-full">
+          <button className="antialiased text-2xl bg-violet-500 mt-1 rounded-4xl active:bg-violet-800 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:ring-offset-2 w-full">
             Batch 2
           </button>
         </Link>
         <Link href="/pages/photo/1">
-          <button className="--font-poppins antialiased text-2xl bg-green-500 mt-1 rounded-4xl active:bg-green-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 w-full">
+          <button className="antialiased text-2xl bg-green-500 mt-1 rounded-4xl active:bg-green-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 w-full">
             Batch 1
           </button>
         </Link>
       </div>
 
-      {isPhotosLoading && (
-        <p className="text-xl --font-poppins text-gray-300 mt-8 text-center">
-          Loading photos...
-        </p>
-      )}
-      {photoError && (
-        <p className="text-red-500 --font-poppins mt-8 text-center text-lg">
-          Error: {photoError}
-        </p>
-      )}
+      {isPhotosLoading && <p className="text-xl text-gray-300 mt-8 text-center">Loading photos...</p>}
+      {photoError && <p className="text-red-500 mt-8 text-center text-lg">Error: {photoError}</p>}
 
       {!isPhotosLoading && !photoError && (
         <div>
-          <p className="--font-poppins antialiased text-5xl text-white text-center mt-1 mb-1">
+          <p className="antialiased text-5xl text-white text-center mt-1 mb-1">
             <strong>Best of Photos:</strong>
           </p>
           <div className="grid grid-cols-4 gap-1.5">
             {photos.map((photo) => (
-              <div
-                key={photo}
-                className="relative aspect-square overflow-hidden rounded-2xl"
-              >
-                <a
-                  href={`/Photography/best/${photo}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <div key={photo} className="relative aspect-square overflow-hidden rounded-2xl">
+                <a href={`/Photography/best/${photo}`} target="_blank" rel="noopener noreferrer">
                   <Image
                     src={`/Photography/best/${photo}`}
                     alt={photo}

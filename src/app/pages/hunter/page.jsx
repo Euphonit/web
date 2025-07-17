@@ -19,11 +19,7 @@ export default function Hunter() {
           const data = await response.json();
           setIsAuthenticated(data.isAuthenticated);
         } else {
-          console.error(
-            "Auth check failed:",
-            response.status,
-            response.statusText,
-          );
+          console.error("Auth check failed:", response.status, response.statusText);
           setIsAuthenticated(false);
         }
       } catch (error) {
@@ -43,7 +39,7 @@ export default function Hunter() {
 
   if (isLoading) {
     return (
-      <p className="text-xl --font-poppins text-gray-300 flex justify-center items-center min-h-[calc(100vh-200px)]">
+      <p className="text-xl text-gray-300 flex justify-center items-center min-h-[calc(100vh-200px)]">
         Loading...
       </p>
     );
@@ -56,25 +52,25 @@ export default function Hunter() {
   // Passworded content
   return (
     <div className="">
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 grid-x-1">
         <Link href="/pages/blog">
-          <button className="--font-poppins antialiased text-2xl bg-blue-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 w-full">
+          <button className="antialiased text-2xl bg-blue-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 w-full">
             📝 Daniel's Blog
           </button>
         </Link>
         <Link href="/">
-          <button className="--font-poppins antialiased text-2xl bg-green-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 active:bg-green-700 w-full">
+          <button className="antialiased text-2xl bg-green-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 active:bg-green-700 w-full">
             🏠 Daniel's Website
           </button>
         </Link>
         <Link href="/pages/photo">
-          <button className="--font-poppins antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 w-full">
+          <button className="antialiased text-2xl bg-orange-500 text-white px-4 py-2 mt-1 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 w-full">
             📷 Daniel's Photography
           </button>
         </Link>
       </div>
       <div className="flex flex-col items-center">
-        <p className="--font-poppins antialiased text-clip text-4xl">
+        <p className="antialiased text-clip text-4xl">
           I'm{" "}
           <strong>
             <em>Hunter</em>
@@ -90,9 +86,7 @@ export default function Hunter() {
           , and this is my website!
           <br />
         </p>
-        <p className="--font-poppins antialiased text-4xl pt-3">
-          Picture of Me:
-        </p>
+        <p className="antialiased text-4xl pt-3">Picture of Me:</p>
         <div>
           <Image
             className="rounded-2xl"
