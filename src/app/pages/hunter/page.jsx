@@ -87,15 +87,17 @@ export default function Hunter() {
           <br />
         </p>
         <p className="antialiased text-4xl pt-3">Picture of Me:</p>
-        <div>
-          <Image
-            className="rounded-2xl"
-            src="/Photography/5/DSC00033.JPG"
-            width={713}
-            height={535}
-            title="(daniel) idk wtf hunter is doing being sped ig"
-            alt="hunter being sped"
-          />
+        <div className="overflow-hidden rounded-2xl">
+          <a href="/Photography/5/DSC00033.webp" rel="noopener noreferrer" target="_blank">
+            <Image
+              className="hover:scale-105 transition-transform duration-200"
+              src="/Photography/5/DSC00033.JPG"
+              width={713}
+              height={535}
+              title="(daniel) idk wtf hunter is doing being sped ig"
+              alt="hunter being sped"
+            />
+          </a>
         </div>
       </div>
     </div>

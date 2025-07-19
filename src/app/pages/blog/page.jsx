@@ -26,9 +26,11 @@ export default function BlogPage() {
           </button>
         </Link>
       </div>
-      <p className="antialiased text-7xl mt-1 rounded-4xl font-bold text-center bg-green-900 p-3">
-        Daniel Crutti's Blog
-      </p>
+      <div>
+        <p className="antialiased text-7xl mt-1 rounded-4xl font-bold text-center bg-green-900 p-3">
+          Daniel Crutti's Blog
+        </p>
+      </div>
       <div className="grid grid-rows-6">
         <Link href="/pages/blog/blogs/mdx">
           <button
