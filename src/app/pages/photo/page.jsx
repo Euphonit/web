@@ -22,7 +22,11 @@ export default function PhotoHome() {
           const data = await response.json();
           setIsAuthenticated(data.isAuthenticated);
         } else {
-          console.error("Auth check failed:", response.status, response.statusText);
+          console.error(
+            "Auth check failed:",
+            response.status,
+            response.statusText,
+          );
           setIsAuthenticated(false);
         }
       } catch (error) {
@@ -62,7 +66,9 @@ export default function PhotoHome() {
               // Potentially de-authenticate if token is invalid
               // This might cause a loop if the cookie is still there and invalid
               // For now, just show error. A robust solution might involve clearing the cookie.
-              console.warn("Photo API returned 401, consider re-authentication flow.");
+              console.warn(
+                "Photo API returned 401, consider re-authentication flow.",
+              );
             }
           }
         })
@@ -102,6 +108,11 @@ export default function PhotoHome() {
         </Link>
       </div>
       <div className="grid">
+        <Link href="/pages/photo/6">
+          <button className="antialiased text-2xl bg-sky-500 mt-1 rounded-4xl active:bg-sky-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 w-full">
+            Batch 6
+          </button>
+        </Link>
         <Link href="/pages/photo/5">
           <button className="antialiased text-2xl bg-zinc-500 mt-1 rounded-4xl active:bg-zinc-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 w-full">
             Batch 5
@@ -129,8 +140,16 @@ export default function PhotoHome() {
         </Link>
       </div>
 
-      {isPhotosLoading && <p className="text-xl text-gray-300 mt-8 text-center">Loading photos...</p>}
-      {photoError && <p className="text-red-500 mt-8 text-center text-lg">Error: {photoError}</p>}
+      {isPhotosLoading && (
+        <p className="text-xl text-gray-300 mt-8 text-center">
+          Loading photos...
+        </p>
+      )}
+      {photoError && (
+        <p className="text-red-500 mt-8 text-center text-lg">
+          Error: {photoError}
+        </p>
+      )}
 
       {!isPhotosLoading && !photoError && (
         <div>
@@ -139,8 +158,15 @@ export default function PhotoHome() {
           </p>
           <div className="grid grid-cols-4 gap-1.5">
             {photos.map((photo) => (
-              <div key={photo} className="relative aspect-square overflow-hidden rounded-2xl">
-                <a href={`/Photography/best/${photo}`} target="_blank" rel="noopener noreferrer">
+              <div
+                key={photo}
+                className="relative aspect-square overflow-hidden rounded-2xl"
+              >
+                <a
+                  href={`/Photography/best/${photo}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src={`/Photography/best/${photo}`}
                     alt={photo}
