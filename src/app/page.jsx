@@ -57,12 +57,12 @@ export default function HomePage() {
         </p>
         <p className="antialiased text-4xl pt-3">Picture of Me:</p>
         <div className="overflow-hidden rounded-2xl">
-          <a href="/Photography/5/DSC00005.webp" rel="noopener noreferrer" target="_blank">
+          <a href="/me.jpg" rel="noopener noreferrer" target="_blank">
             <Image
               className="hover:scale-105 transition-transform duration-200"
-              src="/Photography/5/DSC00005.webp"
-              width={713}
-              height={535}
+              src="/me.jpg"
+              width={540}
+              height={540}
               title="me driving a boat i know im so cool"
               alt="me driving a boat i know im so cool"
             />
