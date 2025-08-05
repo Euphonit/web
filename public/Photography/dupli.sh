@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the directory containing both JPEG and WebP files
-image_dir="/Users/daniel/Code/web/public/Photography/5"  # Replace with the actual path
+image_dir="/home/daniel/Code/web/public/Photography/6"  # Replace with the actual path
 
 # Function to check if a JPEG file has a corresponding WebP file and remove it
 remove_duplicate_jpg() {
