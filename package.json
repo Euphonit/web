@@ -28,5 +28,10 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "eslint-config-next": "15.3.4"
-  }
+  },
+  "trustedDependencies": [
+    "@tailwindcss/oxide",
+    "@vercel/speed-insights",
+    "unrs-resolver"
+  ]
 }
