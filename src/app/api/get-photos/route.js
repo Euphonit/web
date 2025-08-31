@@ -20,7 +20,7 @@ export async function GET(request) {
     );
     let filenames = await fs.readdir(photosDirectory);
     filenames = filenames.filter((filename) =>
-      /\.(JPG|jpg|webp|png|gif)$/i.test(filename),
+      /\.(JPG|jpg|webp|avif|png|gif)$/i.test(filename),
     );
 
     return NextResponse.json({ photos: filenames });
