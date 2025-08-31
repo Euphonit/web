@@ -109,7 +109,7 @@ export default function PhotoHome() {
       </div>
       <div className="grid">
         <Link href="/pages/photo/7">
-          <button className="antialiased text-2xl bg-amber-500 mt-1 rounded-4xl active:bg-amber-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 w-full">
+          <button className="antialiased text-2xl bg-amber-500 mt-1 rounded-4xl active:bg-amber-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 w-full">
             Batch 7
           </button>
         </Link>
