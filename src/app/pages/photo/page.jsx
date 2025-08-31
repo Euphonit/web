@@ -106,16 +106,14 @@ export default function PhotoHome() {
 
   return (
     <div>
-      {isSidebarOpen && <Sidebar onClose={toggleSidebar} />}
+      <Sidebar onClose={toggleSidebar} isOpen={isSidebarOpen} />
       <div className="flex flex-row pt-1 px-1 py-1">
         <button
           onClick={toggleSidebar}
-          // w-52 is a valid Tailwind class for a fixed width.
-          className="sm:w-62 shrink flex-none mb-1 antialiased text-2xl bg-blue-500 text-white px-4 py-2 rounded-3xl font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700"
+          className={`transition-all duration-300 ease-in ${isSidebarOpen ? "animate-none" : "animate-none"} sm:w-62 shrink flex-none mb-1 antialiased text-2xl bg-blue-500 text-white px-4 py-2 rounded-3xl font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700`}
         >
           Image Archive
         </button>
-        {/* Apply flex-grow directly to the Link component */}
         <Link href="/" className="flex-grow ml-1 mb-1">
           <button className="w-full h-full antialiased text-2xl bg-orange-500 text-white px-4 py-2 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700">
             🏠 Home
@@ -139,7 +137,7 @@ export default function PhotoHome() {
           <p className="antialiased text-5xl text-white text-center mb-1">
             <strong>Best of Photos:</strong>
           </p>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
+          <div className="grid 3xl:gap-3 2xl:gap-2 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
             {photos.map((photo) => (
               <div
                 key={photo}

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRef, useEffect } from "react";
 
-export default function Sidebar({ onClose }) {
+export default function Sidebar({ onClose, isOpen }) {
   const sidebarRef = useRef(null);
 
   useEffect(() => {
@@ -19,18 +19,17 @@ export default function Sidebar({ onClose }) {
 
   return (
     <div
-      ref={sidebarRef}
-      className="rounded-2xl fixed top-0 left-0 w-64 h-full bg-blue-950 text-white p-1 z-40"
+      className={`rounded-2xl fixed top-0 w-64 h-full bg-blue-950/70 text-white p-1 z-40 transition-all duration-300 ease-out ${isOpen ? "left-0" : "-left-64"}`}
     >
       <button
         onClick={onClose}
-        className="w-full top-4 right-4 p-2 text-2xl text-white bg-red-500 rounded-full"
+        className="w-full top-4 right-4 p-2 text-2xl text-white bg-red-500 rounded-full active:bg-red-700 transition-colors duration-200 px-4 py-2 cursor-pointer hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
       >
         Close Sidebar
       </button>
       <aside>
         <nav>
-          <ul>
+          <ul className="flex flex-col grow">
             <li>
               <Link
                 target="_blank"
