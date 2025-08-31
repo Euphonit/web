@@ -1,5 +1,7 @@
 import "../../components/font";
 import Link from "next/link";
+import BlogButton from "@/app/components/blogmainbutton";
+import MainNav from "@/app/components/mainnav";
 
 export const metadata = {
   title: "Daniel's Blog",
@@ -9,84 +11,62 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <div className="">
-      <div className="grid grid-cols-3 grid-x-1 mx-1 mt-1 space-x-1">
-        <Link href="/pages/hunter">
-          <button className="antialiased text-2xl bg-blue-500 text-white px-4 py-2 rounded-3xl font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 w-full">
-            🐺 Hunter's Page (Passworded)
-          </button>
-        </Link>
-        <Link href="/">
-          <button className="antialiased text-2xl bg-green-500 text-white px-4 py-2 rounded-3xl font-medium cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 active:bg-green-700 w-full">
-            🏠 Home
-          </button>
-        </Link>
-        <Link href="/pages/photo">
-          <button className="antialiased text-2xl bg-orange-500 text-white px-4 py-2 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors duration-200 active:bg-orange-700 w-full">
-            📷 Photography (Passworded)
-          </button>
-        </Link>
-      </div>
+      <MainNav type="blog" />
       <div>
-        <p className="antialiased text-7xl mt-1 rounded-4xl font-bold text-center bg-green-900 p-3">
+        <p className="antialiased text-7xl mt-1 mx-1 rounded-4xl font-bold text-center bg-green-900 p-3">
           Daniel Crutti's Blog
         </p>
       </div>
-      <div className="grid grid-rows-6">
-        <Link href="/pages/blog/blogs/mdx">
-          <button
-            className="antialiased text-2xl bg-zinc-500 mt-1 rounded-4xl
-        active:bg-zinc-800 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-zinc-700 focus:outline-none focus:ring-2
-        focus:ring-zinc-500 focus:ring-offset-2 w-full"
-          >
-            6# Site Update 1: The MDX Update (Jul 9, 2025)
-          </button>
-        </Link>
-        <Link href="/pages/blog/blogs/minidisc">
-          <button
-            className="antialiased text-2xl bg-blue-500 mt-1 rounded-4xl
-        active:bg-blue-800 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-blue-700 focus:outline-none focus:ring-2
-        focus:ring-blue-500 focus:ring-offset-2 w-full"
-          >
-            5# MiniDisc (Jun 23, 2025)
-          </button>
-        </Link>
-        <Link href="/pages/blog/blogs/8thyear">
-          <button
-            className="antialiased text-2xl bg-teal-600 mt-1 rounded-4xl
-        active:bg-teal-800 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-teal-700 focus:outline-none focus:ring-2
-        focus:ring-teal-500 focus:ring-offset-2 w-full"
-          >
-            4# My Year (May 25, 2025) (Password Protected)
-          </button>
-        </Link>
-        <Link href="/pages/blog/blogs/theaquit">
-          <button
-            className="antialiased text-2xl bg-orange-700 mt-1 rounded-4xl
-        active:bg-orange-900 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-orange-800 focus:outline-none focus:ring-2
-        focus:ring-orange-500 focus:ring-offset-2 w-full"
-          >
-            3# Our lead male just quit our theater show (Mar 20, 2025)
-          </button>
-        </Link>
-        <Link href="/pages/blog/blogs/musfil">
-          <button
-            className="antialiased text-2xl bg-purple-700 mt-1 rounded-4xl
-        active:bg-purple-900 transition-colors duration-200 font-light px-4 py-2
-        cursor-pointer hover:bg-purple-800 focus:outline-none focus:ring-2
-        focus:ring-purple-500 focus:ring-offset-2 w-full"
-          >
-            2# Why did we abandon music files? (Mar 16, 2025)
-          </button>
-        </Link>
-        <Link href="/pages/blog/blogs/journey">
-          <button className="antialiased text-2xl bg-green-700 mt-1 rounded-4xl active:bg-green-800 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 w-full">
-            1# My dev journey thus far (Feb. 22 2025)
-          </button>
-        </Link>
+      <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 mx-2 my-2 mt-1">
+        <BlogButton
+          href="/pages/blog/blogs/siteupdates/3flex"
+          color="red"
+          text="7# Site Update 2: Flex and Photo (August 31, 2025)"
+          img="/Photography/7/IMG_3728.avif"
+          alt="mdx logo"
+        />
+        <BlogButton
+          href="/pages/blog/blogs/siteupdates/2mdx"
+          color="zinc"
+          text="6# Site Update 1: The MDX Update (Jul 9, 2025)"
+          img="/blogpic/mdx.svg"
+          alt="mdx logo"
+        />
+        <BlogButton
+          href="/pages/blog/blogs/minidisc"
+          color="blue"
+          text="5# Adventures with MiniDisc (Jun 23, 2025)"
+          img="/blogpic/MiniDiscLogo.svg"
+          alt="minidisc logo"
+        />
+        <BlogButton
+          href="/pages/blog/blogs/8thyear"
+          color="teal"
+          text="4# My Year (May 25, 2025) (Password Protected)"
+          img="/blogpic/fireworks.jpg"
+          alt="placeholder"
+        />
+        <BlogButton
+          href="/pages/blog/blogs/theaquit"
+          color="orange"
+          text="3# Our lead male just quit our theater show (Mar 20, 2025)"
+          img="/blogpic/theater.jpg"
+          alt="placeholder"
+        />
+        <BlogButton
+          href="/pages/blog/blogs/musfil"
+          color="purple"
+          text="2# Why did we abandon music files? (Mar 16, 2025)"
+          img="/blogpic/musicfile.png"
+          alt="placeholder"
+        />
+        <BlogButton
+          href="/pages/blog/blogs/journey"
+          color="green"
+          text="1# My dev journey thus far (Feb. 22 2025)"
+          img="/blogpic/devjourn.png"
+          alt="placeholder"
+        />
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function HomeButton({ title, sub }) {
+export default function HomeButton({ title, sub, color }) {
   return (
     <div>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-1 mx-1">
         <Link href="/pages/blog">
           <button
             className="antialiased text-3xl bg-blue-500 px-4 py-2 mt-1 rounded-3xl
@@ -23,7 +23,9 @@ export default function HomeButton({ title, sub }) {
           </button>
         </Link>
       </div>
-      <div className="antialiased bg-amber-700 p-4 rounded-4xl w-fit mx-auto mt-4 text-center">
+      <div
+        className={`antialiased bg-${color}-700 p-4 rounded-4xl mt-1 mx-1 text-center`}
+      >
         <p className="font-bold text-6xl text-white">{title}</p>
         <p className="font-normal text-2xl text-gray-300 mt-0.5">{sub}</p>
       </div>
