@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Set the directory containing the JPEG files
-input_dir="/home/daniel/Code/web/public/Photography/6"  # Replace with the actual path
+input_dir="/home/daniel/Code/web/public/Photography/8"  # Replace with the actual path
 
-# Set the directory where you want to save the WebP files
-output_dir="/home/daniel/Code/web/public/Photography/6"  # Replace with the desired output path
+# Set the directory where you want to save the AVIF files
+output_dir="/home/daniel/Code/web/public/Photography/8"  # Replace with the desired output path
 
-# Ensure the output directory exists.  If it doesn't, create it.
+# Ensure the output directory exists. If it doesn't, create it.
 mkdir -p "$output_dir"
 
 # Loop through all JPEG files in the input directory
@@ -15,13 +15,13 @@ find "$input_dir" -type f -name "*.JPG" -print0 | while IFS= read -r -d $'\0' jp
   filename=$(basename "$jpeg_file" .JPG)
 
   # Construct the output filename
-  webp_file="$output_dir/${filename}.webp"
+  avif_file="$output_dir/${filename}.avif"
 
-  # Use ffmpeg to convert the JPEG to WebP
-  ffmpeg -i "$jpeg_file" -c:v libwebp -lossless 0 -quality 80 "$webp_file"
+  # Use ImageMagick (magick) to convert the JPEG to lossless AVIF
+  magick "$jpeg_file" -quality 100 "$avif_file"
 
   # Optional: Print a message to the console indicating the conversion
-  echo "Converted: $jpeg_file to $webp_file"
+  echo "Converted: $jpeg_file to $avif_file"
 done
 
 echo "Conversion complete."

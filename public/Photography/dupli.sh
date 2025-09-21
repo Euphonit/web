@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# Set the directory containing both JPEG and WebP files
-image_dir="/home/daniel/Code/web/public/Photography/6"  # Replace with the actual path
+# Set the directory containing both JPEG and AVIF files
+image_dir="/home/daniel/Code/web/public/Photography/8"  # Replace with the actual path
 
-# Function to check if a JPEG file has a corresponding WebP file and remove it
+# Function to check if a JPEG file has a corresponding AVIF file and remove it
 remove_duplicate_jpg() {
   local jpg_file="$1"
-  local filename=$(basename "$jpg_file" .JPG)  # Handle uppercase .JPG
-  local webp_file="$image_dir/${filename}.webp"
+  local filename=$(basename "$jpg_file" .JPG)  # Get filename without the .JPG extension
+  local avif_file="$image_dir/${filename}.avif"
 
-  # Check if the WebP file exists
-  if [[ -f "$webp_file" ]]; then
+  # Check if the AVIF file exists
+  if [[ -f "$avif_file" ]]; then
     echo "Removing duplicate JPEG: $jpg_file"
     rm "$jpg_file"
   else
-    echo "Keeping: $jpg_file (no corresponding WebP)"
+    echo "Keeping: $jpg_file (no corresponding AVIF)"
   fi
 }
 

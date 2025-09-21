@@ -34,6 +34,18 @@ export default function Sidebar({ onClose, isOpen }) {
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
+                href="/pages/photo/8"
+                onClick={onClose}
+              >
+                <button className="antialiased text-2xl bg-pink-500 mt-1 rounded-4xl active:bg-pink-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 w-full">
+                  Batch 8
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href="/pages/photo/7"
                 onClick={onClose}
               >
