@@ -18,7 +18,7 @@ find "$input_dir" -type f -name "*.JPG" -print0 | while IFS= read -r -d $'\0' jp
   avif_file="$output_dir/${filename}.avif"
 
   # Use ImageMagick (magick) to convert the JPEG to lossless AVIF
-  magick "$jpeg_file" -quality 100 "$avif_file"
+  magick "$jpeg_file" -quality 80 "$avif_file"
 
   # Optional: Print a message to the console indicating the conversion
   echo "Converted: $jpeg_file to $avif_file"
