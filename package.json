@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "devnoturbo": "next dev",
+    "prebuild": "node scripts/generate-photo-list.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
