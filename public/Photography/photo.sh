@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Set the directory containing the JPEG files
-input_dir="/home/daniel/Code/web/public/Photography/8"  # Replace with the actual path
+input_dir="/home/daniel/Code/web/public/Photography/10"  # Replace with the actual path
 
 # Set the directory where you want to save the AVIF files
-output_dir="/home/daniel/Code/web/public/Photography/8"  # Replace with the desired output path
+output_dir="/home/daniel/Code/web/public/Photography/10"  # Replace with the desired output path
 
 # Ensure the output directory exists. If it doesn't, create it.
 mkdir -p "$output_dir"
