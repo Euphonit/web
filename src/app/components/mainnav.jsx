@@ -20,7 +20,7 @@ export default function MainNav({ type }) {
           </button>
         </Link>
         <Link
-          href="https://fs.danielcrutti.com/cam/vid"
+          href="https://fs.danielcrutti.com/cam/vid%20%2B%20sound/"
           target="_blank"
           rel="noopener noreferrer"
         >
