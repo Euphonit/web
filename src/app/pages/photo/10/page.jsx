@@ -62,7 +62,7 @@ function PhotoGallery() {
   }
 
   return (
-    <div className="grid grid-cols-4 gap-1.5">
+    <div className="grid 3xl:gap-3 2xl:gap-2 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
       {photos.map((photo) => (
         <div
           key={photo}
