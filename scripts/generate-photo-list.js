@@ -7,7 +7,6 @@ const PROJECT_ROOT = process.cwd();
 const PUBLIC_DIR = path.join(PROJECT_ROOT, "public");
 const PHOTOGRAPHY_BASE_DIR = path.join(PUBLIC_DIR, "Photography");
 
-// ⭐️ CRITICAL CHANGE: Output file is now inside the public directory
 const OUTPUT_FILE = path.join(PUBLIC_DIR, "photo-lists.json");
 
 // Regex to match common photo extensions
