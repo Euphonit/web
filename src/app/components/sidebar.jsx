@@ -31,6 +31,20 @@ export default function Sidebar({ onClose, isOpen }) {
         <nav>
           <ul className="flex flex-col grow">
             <li>
+              <Link rel="noopener" href="/pages/photo/13" onClick={onClose}>
+                <button className="antialiased text-2xl bg-teal-500 mt-1 rounded-4xl active:bg-teal-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 w-full">
+                  Batch 13
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link rel="noopener" href="/pages/photo/12" onClick={onClose}>
+                <button className="antialiased text-2xl bg-sky-500 mt-1 rounded-4xl active:bg-sky-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 w-full">
+                  Batch 12
+                </button>
+              </Link>
+            </li>
+            <li>
               <Link rel="noopener" href="/pages/photo/11" onClick={onClose}>
                 <button className="antialiased text-2xl bg-green-500 mt-1 rounded-4xl active:bg-green-700 transition-colors duration-200 font-light px-4 py-2 cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 w-full">
                   Batch 11
