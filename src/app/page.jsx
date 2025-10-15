@@ -11,47 +11,92 @@ export default function HomePage() {
   const [isEuphonitHovered, setIsEuphonitHovered] = useState(false);
 
   return (
-    <div className="">
+    <div className="min-h-screen">
       <MainNav type="home" />
-      <div className="flex flex-col items-center">
-        <p className="antialiased text-clip text-4xl">
-          I'm{" "}
-          <span
-            onMouseEnter={() => setIsDanielHovered(true)}
-            onMouseLeave={() => setIsDanielHovered(false)}
-            // TailWind css
-            className={`transition-all duration-300 ease-in-out ${isDanielHovered ? "animate-text bg-gradient-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}`}
-          >
-            <strong>
-              <em>Daniel Crutti</em>
-            </strong>
-          </span>{" "}
-          also known online as{" "}
-          <span
-            onMouseEnter={() => setIsEuphonitHovered(true)}
-            onMouseLeave={() => setIsEuphonitHovered(false)}
-            // TailWind css
-            className={`transition-all duration-300 ease-in-out ${isEuphonitHovered ? "animate-text bg-gradient-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}`}
-          >
-            <strong>
-              <em>Euphonit</em>
-            </strong>
-          </span>
-          , and this is my website!
-          <br />
-        </p>
-        <p className="antialiased text-4xl pt-3">Picture of Me:</p>
-        <div className="overflow-hidden rounded-2xl">
-          <a href="/me.jpg" rel="noopener noreferrer" target="_blank">
-            <Image
-              className="hover:scale-105 transition-transform duration-200"
-              src="/me.jpg"
-              width={540}
-              height={540}
-              title="me driving a boat i know im so cool"
-              alt="me driving a boat i know im so cool"
-            />
-          </a>
+      <div className="flex flex-col sm:flex-row min-h-full sm:h-[calc(100vh-4rem)] justify-center sm:pt-1 px-4 sm:px-8 overflow-x-hidden">
+        <div className="w-full sm:w-2/3 px-4 flex flex-col items-center justify-center p-4 order-1 xs:order-2">
+          <div className="text-center">
+            <p
+              className="
+                antialiased
+                text-clip
+                text-3xl
+                sm:text-5xl
+                md:text-6xl
+                lg:text-7xl
+                xl:text-8xl
+              "
+            >
+              I'm{" "}
+              <span
+                onMouseEnter={() => setIsDanielHovered(true)}
+                onMouseLeave={() => setIsDanielHovered(false)}
+                className="group inline-block"
+              >
+                <span
+                  className={`
+                    transition-all duration-300 ease-in-out
+                    ${isDanielHovered ? "animate-text bg-gradient-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}
+                    transform origin-bottom
+                    group-hover:scale-y-[1.3]
+                    group-hover:inline-block
+                    transition-transform duration-300
+                  `}
+                >
+                  <strong>
+                    <em>Daniel Crutti</em>
+                  </strong>
+                </span>
+              </span>{" "}
+              also known online as{" "}
+              <span
+                onMouseEnter={() => setIsEuphonitHovered(true)}
+                onMouseLeave={() => setIsEuphonitHovered(false)}
+                className="group inline-block"
+              >
+                <span
+                  className={`
+                    transition-all duration-300 ease-in-out
+                    ${isEuphonitHovered ? "animate-text bg-gradient-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}
+                    transform origin-bottom
+                    group-hover:scale-y-[1.2]
+                    group-hover:inline-block
+                    transition-transform duration-300
+                  `}
+                >
+                  <strong>
+                    <em>Euphonit</em>
+                  </strong>
+                </span>
+              </span>
+              , and this is my website!
+              <br />
+            </p>
+          </div>
+        </div>
+        <div className="w-full sm:w-1/3 flex flex-col items-center justify-center pt-4 sm:pt-0 order-2 xs:order-1">
+          <p className="antialiased text-4xl pb-3 text-center">
+            Picture of Me:
+          </p>
+
+          <div className="overflow-hidden rounded-2xl w-full max-w-sm">
+            <a
+              href="/me.jpg"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="block"
+            >
+              <Image
+                className="hover:scale-104 transition-transform duration-200 w-full h-auto"
+                src="/me.jpg"
+                width={540}
+                height={540}
+                title="me driving a boat i know im so cool"
+                alt="me driving a boat i know im so cool"
+              />
+            </a>
+          </div>
+          <div className="h-8 sm:hidden"></div>
         </div>
       </div>
     </div>

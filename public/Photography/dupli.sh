@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the directory containing both JPEG and AVIF files
-image_dir="/home/daniel/Code/web/public/Photography/13"  # Replace with the actual path
+image_dir="/home/daniel/Code/web/public/Photography/14"  # Replace with the actual path
 
 # Function to check if a JPEG file has a corresponding AVIF file and remove it
 remove_duplicate_jpg() {
