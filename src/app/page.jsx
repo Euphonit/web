@@ -56,7 +56,7 @@ export default function HomePage() {
               >
                 <span
                   className={`
-                    transition-all duration-300 ease-in-out
+                    transition-all duration-400 ease-in-out
                     ${isEuphonitHovered ? "animate-text bg-gradient-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}
                     transform origin-bottom
                     group-hover:scale-y-[1.2]
@@ -76,7 +76,9 @@ export default function HomePage() {
         </div>
         <div className="w-full sm:w-1/3 flex flex-col items-center justify-center pt-4 sm:pt-0 order-2 xs:order-1">
           <p className="antialiased text-4xl pb-3 text-center">
-            Picture of Me:
+            <strong>
+              <em>Picture of Me:</em>
+            </strong>
           </p>
 
           <div className="overflow-hidden rounded-2xl w-full max-w-sm">
@@ -91,8 +93,8 @@ export default function HomePage() {
                 src="/me.jpg"
                 width={540}
                 height={540}
-                title="me driving a boat i know im so cool"
-                alt="me driving a boat i know im so cool"
+                title="picture of me looking fresh"
+                alt="picture of me looking fresh"
               />
             </a>
           </div>
