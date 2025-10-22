@@ -28,7 +28,7 @@ function PhotoGallery() {
         }
         const allPhotoLists = await response.json();
 
-        // ⭐️ Access the specific array using the key (e.g., "11")
+        // Access the specific array using the key
         const currentPhotos = allPhotoLists[CURRENT_DIR_KEY] || [];
 
         setPhotos(currentPhotos);
@@ -63,28 +63,33 @@ function PhotoGallery() {
 
   return (
     <div className="grid 3xl:gap-3 2xl:gap-2 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
-      {photos.map((photo) => (
-        <div
-          key={photo}
-          className="relative aspect-square overflow-hidden rounded-2xl"
-        >
-          <a
-            // Image source path uses the correct directory key
-            href={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
-            target="_blank"
-            rel="noopener noreferrer"
+      {photos.map(
+        (
+          baseName, // 'baseName' is now assumed to be the name without extension (e.g., "01")
+        ) => (
+          <div
+            key={baseName}
+            className="relative aspect-square overflow-hidden rounded-2xl"
           >
-            <Image
-              src={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
-              alt={photo}
-              fill={true}
-              unoptimized={true}
-              style={{ objectFit: "cover" }}
-              className="hover:scale-105 transition-transform duration-200"
-            />
-          </a>
-        </div>
-      ))}
+            <a
+              // ➡️ a tag href simply appends the .JPG extension
+              href={`/Photography/${CURRENT_DIR_KEY}/${baseName}.JPG`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                // ➡️ Image src simply appends the .avif extension
+                src={`/Photography/${CURRENT_DIR_KEY}/${baseName}.avif`}
+                alt={baseName}
+                fill={true}
+                unoptimized={true}
+                style={{ objectFit: "cover" }}
+                className="hover:scale-105 transition-transform duration-200"
+              />
+            </a>
+          </div>
+        ),
+      )}
     </div>
   );
 }
