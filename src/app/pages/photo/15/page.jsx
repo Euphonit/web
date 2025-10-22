@@ -74,10 +74,11 @@ function PhotoGallery() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
               src={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
               alt={photo}
-              fill
+              fill={true}
+              unoptimized={true}
               style={{ objectFit: "cover" }}
               className="hover:scale-105 transition-transform duration-200"
             />
