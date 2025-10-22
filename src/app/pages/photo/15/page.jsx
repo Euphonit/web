@@ -74,7 +74,7 @@ function PhotoGallery() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <img
               src={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
               alt={photo}
               fill
