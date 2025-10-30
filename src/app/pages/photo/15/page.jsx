@@ -83,6 +83,8 @@ function PhotoGallery() {
                 alt={baseName}
                 fill={true}
                 unoptimized={true}
+                decoding="async"
+                loading="lazy"
                 style={{ objectFit: "cover" }}
                 className="hover:scale-105 transition-transform duration-200"
               />
