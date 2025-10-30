@@ -8,14 +8,16 @@ const PHOTOS_DIR = path.join(process.cwd(), "public", "Photography");
 const OUTPUT_FILE = path.join(process.cwd(), "public", "photo-lists.json");
 // Directory ID cutoff: directories >= this number will have file extensions stripped
 const BASE_NAME_CUTOFF = 15;
+// Regex to match relevant photo extensions for all directories (JPG and AVIF)
+const PHOTO_REGEX = /\.(JPG|jpg|avif|AVIF)$/i;
 // ---------------------
 
 const allPhotoLists = {};
 
 /**
  * Processes a single photo directory, reading the filenames and
- * conditionally stripping the extension based on the directory ID.
- * * @param {string} dirId - The name of the directory (e.g., '15').
+ * conditionally formatting the output based on the directory ID.
+ * @param {string} dirId - The name of the directory (e.g., '15').
  */
 function processDirectory(dirId) {
   const dirPath = path.join(PHOTOS_DIR, dirId);
@@ -26,24 +28,34 @@ function processDirectory(dirId) {
 
   if (fs.existsSync(dirPath)) {
     console.log(
-      `Processing directory: ${dirId} (Stripping extensions: ${useBaseName ? "Yes" : "No"})`,
+      `Processing directory: ${dirId} (Use Base Name: ${useBaseName ? "Yes" : "No"})`,
     );
     const files = fs.readdirSync(dirPath);
 
-    // Filter only the primary image files (assuming they are .JPG)
-    const photoFilenames = files.filter((file) => /\.JPG$/i.test(file));
+    // ⭐️ Step 1: Filter all files using the new PHOTO_REGEX (JPG or AVIF) ⭐️
+    const photoFilenames = files.filter((file) => PHOTO_REGEX.test(file));
 
-    // Map the filenames to the final format for the JSON
-    allPhotoLists[dirId] = photoFilenames.map((filename) => {
-      if (useBaseName) {
-        // For directory 15 and up, strip the extension (e.g., "01.JPG" -> "01")
+    let photoList;
+
+    if (useBaseName) {
+      // For directories 15 and up: Store only the unique base name (e.g., "DSC01069")
+      const baseNames = new Set();
+
+      photoFilenames.forEach((filename) => {
         const parsed = path.parse(filename);
-        return parsed.name;
-      } else {
-        // For directories below 15, keep the full filename (e.g., "01.JPG" -> "01.JPG")
-        return filename;
-      }
-    });
+        baseNames.add(parsed.name);
+      });
+
+      photoList = Array.from(baseNames);
+    } else {
+      // For directories below 15 (including 7-14): Store the full filename (e.g., "DSC00001.JPG" or "DSC00001.avif")
+      photoList = photoFilenames;
+    }
+
+    allPhotoLists[dirId] = photoList;
+    console.log(
+      `  -> Processed ${dirId}: Found ${photoList.length} unique items.`,
+    );
   } else {
     console.log(`Skipping directory: ${dirId} (Path not found: ${dirPath})`);
   }

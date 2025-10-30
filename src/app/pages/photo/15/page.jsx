@@ -1,4 +1,4 @@
-// src/app/pages/photo/11/page.jsx
+// src/app/pages/photo/15/page.jsx
 "use client";
 
 import Image from "next/image";
@@ -65,20 +65,20 @@ function PhotoGallery() {
     <div className="grid 3xl:gap-3 2xl:gap-2 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
       {photos.map(
         (
-          baseName, // 'baseName' is now assumed to be the name without extension (e.g., "01")
+          baseName, // 'baseName' is the name without extension (e.g., "DSC01069")
         ) => (
           <div
             key={baseName}
             className="relative aspect-square overflow-hidden rounded-2xl"
           >
             <a
-              // ➡️ a tag href simply appends the .JPG extension
+              // a tag href uses the full-resolution .JPG version
               href={`/Photography/${CURRENT_DIR_KEY}/${baseName}.JPG`}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image
-                // ➡️ Image src simply appends the .avif extension
+                // Image src uses the optimized .avif version
                 src={`/Photography/${CURRENT_DIR_KEY}/${baseName}.avif`}
                 alt={baseName}
                 fill={true}
