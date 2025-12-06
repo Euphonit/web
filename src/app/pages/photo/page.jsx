@@ -7,18 +7,26 @@ import "../../components/font";
 import PasswordProtect from "../../components/PasswordProtect.jsx";
 import Sidebar from "../../components/sidebar.jsx";
 
+// NOTE: Hardcode the directory key based on the original path: /Photography/best/
+const CURRENT_DIR_KEY = "best";
+// Path to the file created by the prebuild script, accessible via URL
+const JSON_URL = "/photo-lists.json";
+
 export default function PhotoHome() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // For initial auth check
+  // NOTE: We keep isLoading for the initial authentication check
+  const [isLoading, setIsLoading] = useState(true);
   const [photos, setPhotos] = useState([]);
   const [photoError, setPhotoError] = useState(null);
-  const [isPhotosLoading, setIsPhotosLoading] = useState(false); // For photos fetch
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // for sidebar open/close status
+  // NOTE: Renamed this state to avoid confusion, but it serves the same purpose
+  const [isPhotosLoading, setIsPhotosLoading] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  // --- 1. Initial Authentication Check (UNCHANGED) ---
   useEffect(() => {
     const checkAuthStatus = async () => {
       setIsLoading(true);
@@ -46,45 +54,39 @@ export default function PhotoHome() {
     checkAuthStatus();
   }, []);
 
+  // --- 2. Photo Fetching Logic (MODIFIED to use JSON_URL) ---
   useEffect(() => {
     if (isAuthenticated) {
       setIsPhotosLoading(true);
       setPhotoError(null);
       setPhotos([]); // Clear previous photos
 
-      fetch("/api/get-photos")
-        .then(async (res) => {
-          if (res.ok) {
-            const data = await res.json();
-            setPhotos(data.photos || []);
-          } else {
-            let errorMessage = "Failed to load photos.";
-            try {
-              const data = await res.json();
-              if (data && data.error) {
-                errorMessage = data.error;
-              }
-            } catch (e) {
-              // Ignore parsing error, use default message
-            }
-            setPhotoError(errorMessage);
-            if (res.status === 401) {
-              // Potentially de-authenticate if token is invalid
-              // This might cause a loop if the cookie is still there and invalid
-              // For now, just show error. A robust solution might involve clearing the cookie.
-              console.warn(
-                "Photo API returned 401, consider re-authentication flow.",
-              );
-            }
+      async function fetchPhotoList() {
+        try {
+          // Fetch the list of all photo directories from the public URL
+          const response = await fetch(JSON_URL);
+          if (!response.ok) {
+            throw new Error(
+              `Failed to fetch ${JSON_URL}: ${response.statusText}`,
+            );
           }
-        })
-        .catch((err) => {
-          console.error("Error fetching photos:", err);
-          setPhotoError("An unexpected error occurred while fetching photos.");
-        })
-        .finally(() => {
+          const allPhotoLists = await response.json();
+
+          // Access the specific array using the key ("best")
+          const currentPhotos = allPhotoLists[CURRENT_DIR_KEY] || [];
+
+          setPhotos(currentPhotos);
+        } catch (err) {
+          console.error("Error fetching photo list:", err);
+          setPhotoError(
+            "Could not load photo list. Did the 'prebuild' script run successfully?",
+          );
+        } finally {
           setIsPhotosLoading(false);
-        });
+        }
+      }
+
+      fetchPhotoList();
     }
   }, [isAuthenticated]);
 
@@ -101,11 +103,14 @@ export default function PhotoHome() {
   }
 
   if (!isAuthenticated) {
+    // Retains PasswordProtect
     return <PasswordProtect onPasswordVerified={handlePasswordVerified} />;
   }
 
+  // --- 3. Main Authenticated Render (RETAINS LAYOUT & SIDEBAR) ---
   return (
     <div>
+      {/* Retains Sidebar */}
       <Sidebar onClose={toggleSidebar} isOpen={isSidebarOpen} />
       <div className="flex flex-row pt-1 px-1 py-1">
         <button
@@ -144,12 +149,14 @@ export default function PhotoHome() {
                 className="relative aspect-square overflow-hidden rounded-2xl"
               >
                 <a
-                  href={`/Photography/best/${photo}`}
+                  // Use CURRENT_DIR_KEY ("best") for the path
+                  href={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Image
-                    src={`/Photography/best/${photo}`}
+                    // Use CURRENT_DIR_KEY ("best") for the source
+                    src={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
                     alt={photo}
                     fill
                     style={{ objectFit: "cover" }}

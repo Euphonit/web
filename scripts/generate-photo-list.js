@@ -9,7 +9,7 @@ const OUTPUT_FILE = path.join(process.cwd(), "public", "photo-lists.json");
 // Directory ID cutoff: directories >= this number will have file extensions stripped
 const BASE_NAME_CUTOFF = 15;
 // Regex to match relevant photo extensions for all directories (JPG and AVIF)
-const PHOTO_REGEX = /\.(JPG|jpg|avif|AVIF)$/i;
+const PHOTO_REGEX = /\.(JPG|jpg|avif|AVIF|png|PNG)$/i;
 // ---------------------
 
 const allPhotoLists = {};
