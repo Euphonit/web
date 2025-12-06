@@ -14,11 +14,9 @@ const JSON_URL = "/photo-lists.json";
 
 export default function PhotoHome() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  // NOTE: We keep isLoading for the initial authentication check
   const [isLoading, setIsLoading] = useState(true);
   const [photos, setPhotos] = useState([]);
   const [photoError, setPhotoError] = useState(null);
-  // NOTE: Renamed this state to avoid confusion, but it serves the same purpose
   const [isPhotosLoading, setIsPhotosLoading] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -54,16 +52,15 @@ export default function PhotoHome() {
     checkAuthStatus();
   }, []);
 
-  // --- 2. Photo Fetching Logic (MODIFIED to use JSON_URL) ---
+  // --- 2. Photo Fetching Logic (UNCHANGED) ---
   useEffect(() => {
     if (isAuthenticated) {
       setIsPhotosLoading(true);
       setPhotoError(null);
-      setPhotos([]); // Clear previous photos
+      setPhotos([]);
 
       async function fetchPhotoList() {
         try {
-          // Fetch the list of all photo directories from the public URL
           const response = await fetch(JSON_URL);
           if (!response.ok) {
             throw new Error(
@@ -72,7 +69,6 @@ export default function PhotoHome() {
           }
           const allPhotoLists = await response.json();
 
-          // Access the specific array using the key ("best")
           const currentPhotos = allPhotoLists[CURRENT_DIR_KEY] || [];
 
           setPhotos(currentPhotos);
@@ -103,14 +99,12 @@ export default function PhotoHome() {
   }
 
   if (!isAuthenticated) {
-    // Retains PasswordProtect
     return <PasswordProtect onPasswordVerified={handlePasswordVerified} />;
   }
 
-  // --- 3. Main Authenticated Render (RETAINS LAYOUT & SIDEBAR) ---
+  // --- 3. Main Authenticated Render (FIXED Path Generation) ---
   return (
     <div>
-      {/* Retains Sidebar */}
       <Sidebar onClose={toggleSidebar} isOpen={isSidebarOpen} />
       <div className="flex flex-row pt-1 px-1 py-1">
         <button
@@ -143,21 +137,21 @@ export default function PhotoHome() {
             <strong>Best of Photos:</strong>
           </p>
           <div className="grid 3xl:gap-3 2xl:gap-2 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
-            {photos.map((photo) => (
+            {photos.map((baseName) => (
               <div
-                key={photo}
+                key={baseName}
                 className="relative aspect-square overflow-hidden rounded-2xl"
               >
                 <a
-                  // Use CURRENT_DIR_KEY ("best") for the path
-                  href={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
+                  // ⭐️ Href uses the original file extension (.png)
+                  href={`/Photography/${CURRENT_DIR_KEY}/${baseName}.png`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Image
-                    // Use CURRENT_DIR_KEY ("best") for the source
-                    src={`/Photography/${CURRENT_DIR_KEY}/${photo}`}
-                    alt={photo}
+                    // ⭐️ Src uses the optimized extension (.avif)
+                    src={`/Photography/${CURRENT_DIR_KEY}/${baseName}.avif`}
+                    alt={baseName}
                     fill
                     style={{ objectFit: "cover" }}
                     className="hover:scale-105 transition-transform duration-200"
