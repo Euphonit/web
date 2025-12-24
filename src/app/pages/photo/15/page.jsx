@@ -63,35 +63,29 @@ function PhotoGallery() {
 
   return (
     <div className="grid 3xl:gap-3 2xl:gap-2 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
-      {photos.map(
-        (
-          baseName, // 'baseName' is the name without extension (e.g., "DSC01069")
-        ) => (
-          <div
-            key={baseName}
-            className="relative aspect-square overflow-hidden rounded-2xl"
+      {photos.map((baseName) => (
+        <div
+          key={baseName}
+          className="relative aspect-square overflow-hidden rounded-2xl"
+        >
+          <a
+            href={`/Photography/${CURRENT_DIR_KEY}/${baseName}.JPG`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <a
-              // a tag href uses the full-resolution .JPG version
-              href={`/Photography/${CURRENT_DIR_KEY}/${baseName}.JPG`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                // Image src uses the optimized .avif version
-                src={`/Photography/${CURRENT_DIR_KEY}/${baseName}.avif`}
-                alt={baseName}
-                fill={true}
-                unoptimized={true}
-                decoding="async"
-                loading="lazy"
-                style={{ objectFit: "cover" }}
-                className="hover:scale-105 transition-transform duration-200"
-              />
-            </a>
-          </div>
-        ),
-      )}
+            <Image
+              src={`/Photography/${CURRENT_DIR_KEY}/thumbs/${baseName}.avif`}
+              alt={baseName}
+              fill={true}
+              unoptimized={true}
+              decoding="async"
+              loading="lazy"
+              style={{ objectFit: "cover" }}
+              className="hover:scale-105 transition-transform duration-200 will-change-transform transform:[translateZ(0)]"
+            />
+          </a>
+        </div>
+      ))}
     </div>
   );
 }

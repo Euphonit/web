@@ -75,13 +75,13 @@ export default function HomePage() {
           </div>
         </div>
         <div className="w-full sm:w-1/3 flex flex-col items-center justify-center pt-4 sm:pt-0 order-2 xs:order-1">
-          <p className="antialiased text-4xl pb-3 text-center">
+          <p className="antialiased text-5xl pb-3 text-center">
             <strong>
               <em>Picture of Me:</em>
             </strong>
           </p>
 
-          <div className="overflow-hidden rounded-2xl w-full max-w-sm">
+          <div className="overflow-hidden rounded-2xl w-full">
             <a
               href="/me.jpg"
               rel="noopener noreferrer"
@@ -93,8 +93,8 @@ export default function HomePage() {
                 src="/me.jpg"
                 width={540}
                 height={540}
-                title="picture of me looking fresh"
-                alt="picture of me looking fresh"
+                title="picture of me"
+                alt="picture of me"
               />
             </a>
           </div>

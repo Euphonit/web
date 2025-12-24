@@ -143,18 +143,18 @@ export default function PhotoHome() {
                 className="relative aspect-square overflow-hidden rounded-2xl"
               >
                 <a
-                  // ⭐️ Href uses the original file extension (.png)
                   href={`/Photography/${CURRENT_DIR_KEY}/${baseName}.png`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Image
-                    // ⭐️ Src uses the optimized extension (.avif)
-                    src={`/Photography/${CURRENT_DIR_KEY}/${baseName}.avif`}
+                    src={`/Photography/${CURRENT_DIR_KEY}/thumbs/${baseName}.avif`}
                     alt={baseName}
                     fill
                     style={{ objectFit: "cover" }}
-                    className="hover:scale-105 transition-transform duration-200"
+                    className="hover:scale-105 transition-transform duration-200 will-change-transform transform:[translateZ(0)]"
+                    decoding="async"
+                    loading="lazy"
                   />
                 </a>
               </div>
