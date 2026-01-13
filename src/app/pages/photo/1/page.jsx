@@ -1,23 +1,67 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import fs from "fs/promises";
-import path from "path";
 import "../../../components/font";
+import PasswordProtect from "../../../components/PasswordProtect.jsx";
 
-async function getPhotos() {
-  const photosDirectory = path.join(process.cwd(), "public", "Photography", "1");
-  try {
-    const filenames = await fs.readdir(photosDirectory);
-    return filenames.filter((filename) => /\.(jpg|JPG|webp|jpeg|png|gif)$/i.test(filename));
-  } catch (error) {
-    console.error("Error reading photos directory:", error);
-    return [];
+export default function PhotoPage() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [photos, setPhotos] = useState([]);
+
+  // 1. Check authentication status on mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await fetch("/api/check-auth"); // Uses your route-auth.js logic
+        const data = await res.json();
+        if (data.isAuthenticated) {
+          setIsAuthenticated(true);
+          fetchPhotos(); // Load photos if already logged in
+        }
+      } catch (err) {
+        console.error("Auth check failed", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  // 2. Fetch photo list (Logic adapted for Client side)
+  const fetchPhotos = async () => {
+    try {
+      // Note: Since this is now client-side, we fetch from a JSON list
+      // or an API. If you have the 'photo-lists.json' from your other page, use that:
+      const response = await fetch("/photo-lists.json");
+      const allPhotoLists = await response.json();
+      setPhotos(allPhotoLists["1"] || []);
+    } catch (err) {
+      console.error("Error fetching photos:", err);
+    }
+  };
+
+  const handlePasswordVerified = () => {
+    setIsAuthenticated(true);
+    fetchPhotos();
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-white text-xl">Loading...</p>
+      </div>
+    );
   }
-}
 
-export default async function PhotoPage() {
-  const photos = await getPhotos();
+  // 3. Show Password Screen if not authorized
+  if (!isAuthenticated) {
+    return <PasswordProtect onPasswordVerified={handlePasswordVerified} />;
+  }
 
+  // 4. Main Protected Content
   return (
     <div>
       <div className="grid">
@@ -27,10 +71,18 @@ export default async function PhotoPage() {
           </button>
         </Link>
       </div>
-      <div className="grid grid-cols-4 gap-1.5">
+
+      <div className="grid grid-cols-4 gap-1.5 p-1">
         {photos.map((photo) => (
-          <div key={photo} className="relative aspect-square overflow-hidden rounded-2xl">
-            <a href={`/Photography/1/${photo}`} target="_blank" rel="noopener noreferrer">
+          <div
+            key={photo}
+            className="relative aspect-square overflow-hidden rounded-2xl"
+          >
+            <a
+              href={`/Photography/1/${photo}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src={`/Photography/1/${photo}`}
                 alt={photo}
