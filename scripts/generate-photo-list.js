@@ -11,7 +11,7 @@ const BASE_NAME_CUTOFF = 15;
 const SOURCE_REGEX = /\.(png|PNG|jpg|JPG|jpeg|JPEG)$/i;
 
 // LEGACY SYSTEM: Used for folders < 15. Grabs everything including extensions.
-const LEGACY_REGEX = /\.(JPG|jpg|avif|AVIF|png|PNG)$/i;
+const LEGACY_REGEX = /\.(JPG|jpg|avif|AVIF|png|PNG|webp)$/i;
 // ---------------------
 
 const allPhotoLists = {};
