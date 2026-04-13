@@ -20,7 +20,7 @@ export default function BlogButton({ href, color, text, img, alt }) {
               className="w-full h-full rounded-4xl object-cover"
             />
           </div>
-          <div className="flex-grow flex items-center justify-center text-center p-2">
+          <div className="grow flex items-center justify-center text-center p-2">
             {text}
           </div>
         </button>
