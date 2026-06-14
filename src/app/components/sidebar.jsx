@@ -24,7 +24,6 @@ export default function Sidebar({ onClose, isOpen }) {
   ];
 
   useEffect(() => {
-    // Crucial: Only listen for clicks if the sidebar is open
     if (!isOpen) return;
 
     const handleClickOutside = (event) => {
@@ -47,7 +46,7 @@ export default function Sidebar({ onClose, isOpen }) {
         overflow-y-auto`}
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
-      <div className="p-1 flex flex-col gap-2">
+      <div className="p-1 flex flex-col gap-1">
         <button
           onClick={onClose}
           className="w-full p-2 text-xl text-white bg-red-600 rounded-full hover:bg-red-700 transition-colors cursor-pointer active:bg-red-800"
@@ -56,7 +55,7 @@ export default function Sidebar({ onClose, isOpen }) {
         </button>
 
         <nav>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-1">
             {batches.map((batch) => (
               <li key={batch.id}>
                 <Link

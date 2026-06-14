@@ -12,12 +12,14 @@ export default function BlogPage() {
   return (
     <div className="">
       <MainNav type="blog" />
-      <div>
-        <p className="antialiased text-7xl mt-1 mx-1 rounded-4xl font-bold text-center bg-green-900 p-3">
-          Daniel Crutti's Blog
-        </p>
-      </div>
-      <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 mx-2 my-2 mt-1">
+      <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 mx-2 my-2 mt-1 bg-">
+        {/* <BlogButton
+          href="/pages/blog/blogs/artprocess"
+          color="violet"
+          text="8# How I make my art (June 4, 2026)"
+          img="/Photography/best/thumbs/06 endless nights.avif"
+          alt="mdx logo"
+        /> */}
         <BlogButton
           href="/pages/blog/blogs/siteupdates/3flex"
           color="red"

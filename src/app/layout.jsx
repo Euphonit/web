@@ -11,6 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </head>
       <body className="--font-poppins bg-blue-950 text-white">
         {children}
         <SpeedInsights />

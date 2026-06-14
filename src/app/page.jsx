@@ -36,7 +36,7 @@ export default function HomePage() {
                 <span
                   className={`
                     transition-all duration-300 ease-in-out
-                    ${isDanielHovered ? "animate-text bg-gradient-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}
+                    ${isDanielHovered ? "animate-text bg-linear-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}
                     transform origin-bottom
                     group-hover:scale-y-[1.3]
                     group-hover:inline-block
@@ -57,7 +57,7 @@ export default function HomePage() {
                 <span
                   className={`
                     transition-all duration-400 ease-in-out
-                    ${isEuphonitHovered ? "animate-text bg-gradient-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}
+                    ${isEuphonitHovered ? "animate-text bg-linear-to-r from-blue-500 via-green-500 to-orange-500 bg-clip-text text-transparent" : "animate-text text-white"}
                     transform origin-bottom
                     group-hover:scale-y-[1.2]
                     group-hover:inline-block

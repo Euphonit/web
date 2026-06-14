@@ -1,30 +1,12 @@
 import Link from "next/link";
+import MainNav from "@/app/components/mainnav";
 
 export default function HomeButton({ title, sub, color }) {
   return (
     <div>
-      <div className="grid grid-cols-2 gap-1 mx-1">
-        <Link href="/pages/blog">
-          <button
-            className="antialiased text-3xl bg-blue-500 px-4 py-2 mt-1 rounded-3xl
-      cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500
-      focus:ring-offset-2 transition-colors duration-200 active:bg-blue-700 w-full"
-          >
-            📝 Blog Home
-          </button>
-        </Link>
-        <Link href="/">
-          <button
-            className="antialiased text-3xl bg-green-500 px-4 py-2 mt-1 rounded-3xl
-      cursor-pointer hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500
-      focus:ring-offset-2 transition-colors duration-200 active:bg-green-700 w-full"
-          >
-            🏠 Website Home
-          </button>
-        </Link>
-      </div>
+      <MainNav type="home" />
       <div
-        className={`antialiased bg-${color}-700 p-4 rounded-4xl mt-1 mx-1 text-center`}
+        className={`antialiased bg-green-700 p-4 rounded-4xl mt-1 mx-1 text-center`}
       >
         <p className="font-bold text-6xl text-white">{title}</p>
         <p className="font-normal text-2xl text-gray-300 mt-0.5">{sub}</p>

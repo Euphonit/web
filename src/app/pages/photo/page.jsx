@@ -16,7 +16,6 @@ export default function PhotoHome() {
   const [isPhotosLoading, setIsPhotosLoading] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Stop propagation ensures clicking the button doesn't trigger "handleClickOutside" immediately
   const toggleSidebar = (e) => {
     e.stopPropagation();
     setIsSidebarOpen(!isSidebarOpen);
@@ -56,7 +55,7 @@ export default function PhotoHome() {
         >
           🔑 Image Archive
         </button>
-        <Link href="/" className="flex-grow ml-1 mb-1">
+        <Link href="/" className="grow ml-1 mb-1">
           <button className="w-full h-full antialiased text-2xl bg-orange-500 text-white px-4 py-2 rounded-3xl font-medium cursor-pointer hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors duration-200 active:bg-orange-700">
             🏠 Home
           </button>
@@ -66,7 +65,7 @@ export default function PhotoHome() {
       {!isPhotosLoading && !photoError && (
         <div>
           <p className="antialiased text-5xl text-white text-center mb-1">
-            <strong>Best of Photos:</strong>
+            <strong>My Art</strong>
           </p>
           <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
             {photos.map((baseName) => (
