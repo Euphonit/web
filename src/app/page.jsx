@@ -89,7 +89,7 @@ export default function HomePage() {
               className="block"
             >
               <Image
-                className="hover:scale-104 transition-transform duration-200 w-full h-auto"
+                className="hover:scale-104 transition-transform duration-200 w-full h-auto z-50"
                 src="/me.jpg"
                 width={540}
                 height={540}

@@ -9,6 +9,9 @@ const nextConfig = {
   outputFileTracingExcludes: {
     "/": ["public/Photography/best/**/*"],
   },
+  experimental: {
+    viewTransition: true,
+  },
 };
 
 const withMDX = createMDX({});

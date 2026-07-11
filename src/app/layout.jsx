@@ -1,5 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { ViewTransition } from "react";
+import ScrollBubble from "./components/scrollbubble";
 import "./globals.css";
 import "./components/font";
 
@@ -15,7 +17,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </head>
       <body className="--font-poppins bg-blue-950 text-white">
-        {children}
+        <ViewTransition>{children}</ViewTransition>
+        <ScrollBubble></ScrollBubble>
         <SpeedInsights />
         <Analytics />
       </body>

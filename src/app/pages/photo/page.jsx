@@ -67,7 +67,7 @@ export default function PhotoHome() {
           <p className="antialiased text-5xl text-white text-center mb-1">
             <strong>My Art</strong>
           </p>
-          <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1.5 px-1">
+          <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 gap-1.5 px-1">
             {photos.map((baseName) => (
               <div
                 key={baseName}
