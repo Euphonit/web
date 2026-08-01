@@ -69,7 +69,7 @@ export default function HomePage() {
                   </strong>
                 </span>
               </span>
-              , and this is my website!
+              and this is my website!
               <br />
             </p>
           </div>
